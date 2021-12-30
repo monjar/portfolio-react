@@ -1,0 +1,9 @@
+.header-bg {
+  background-color: rgba(16, 30, 43, 0.801);
+  padding: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: rgb(255, 255, 255);
+  border-radius: 0.3em;
+}

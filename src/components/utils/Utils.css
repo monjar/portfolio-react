@@ -1,0 +1,19 @@
+.nav-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+.nav-button:hover {
+  color: rgb(143, 187, 187);
+  transform: scale(1.1);
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
