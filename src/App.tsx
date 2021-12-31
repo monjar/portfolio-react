@@ -3,7 +3,11 @@ import MainPage from "./pages/MainPage";
 import "./App.css";
 
 const App = () => {
-  return <MainPage />;
+  return (
+    <div className="app">
+      <MainPage />
+    </div>
+  );
 };
 
 export default App;

@@ -1,9 +1,14 @@
 .header-bg {
-  background-color: rgba(16, 30, 43, 0.801);
+  background-color: rgba(255, 255, 255, 0.801);
   padding: 0.5em;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  color: rgb(255, 255, 255);
-  border-radius: 0.3em;
+  color: rgb(39, 39, 39);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 3em;
+  font-size: 1.2em;
 }

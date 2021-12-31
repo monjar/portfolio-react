@@ -1,0 +1,40 @@
+.about-me-bg {
+  margin-top: 8em;
+  margin-left: 3em;
+
+  margin-right: 3em;
+  /* border-color: rgba(255, 255, 255, 0.801);
+  border-style: solid;
+  border-radius: 0.3em; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: center;
+}
+
+.about-me-wellcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin: 0.5em;
+  text-align: center;
+}
+.about-me-desc {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 0.5em;
+  text-align: center;
+}
+
+.hello-there {
+  font-size: 7em;
+}
+
+.intro {
+  font-size: 3em;
+}
+.general-desc {
+  font-size: 2em;
+}

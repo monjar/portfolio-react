@@ -7,7 +7,7 @@
   cursor: pointer;
 }
 .nav-button:hover {
-  color: rgb(143, 187, 187);
+  color: #1d4049;
   transform: scale(1.1);
 }
 

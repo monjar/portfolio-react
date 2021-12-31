@@ -1,11 +1,10 @@
 import React, { SyntheticEvent } from "react";
-import PersonIcon from "@mui/icons-material/Person";
-import CodeIcon from "@mui/icons-material/Code";
-import WorkIcon from "@mui/icons-material/Work";
-import SchoolIcon from "@mui/icons-material/School";
 import "./Header.css";
 import NavButton from "./utils/NavButton";
-
+import { BiCodeAlt } from "react-icons/bi";
+import { MdWork } from "react-icons/md";
+import { CgProfile } from "react-icons/cg";
+import { IoMdSchool } from "react-icons/io";
 const Header = (props: any) => {
   const handleNavChange = (newValue: string) => {
     props.handleNaveChange(newValue);
@@ -15,22 +14,22 @@ const Header = (props: any) => {
     <div className="header-bg">
       <NavButton
         title="About me"
-        icon={<PersonIcon />}
+        icon={<CgProfile />}
         onClick={handleNavChange}
       />
       <NavButton
         title="Projects"
-        icon={<CodeIcon />}
+        icon={<BiCodeAlt />}
         onClick={handleNavChange}
       />
       <NavButton
         title="Experience"
-        icon={<WorkIcon />}
+        icon={<MdWork />}
         onClick={handleNavChange}
       />
       <NavButton
         title="Education"
-        icon={<SchoolIcon />}
+        icon={<IoMdSchool />}
         onClick={handleNavChange}
       />
     </div>
