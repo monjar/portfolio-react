@@ -29,7 +29,7 @@
 }
 
 .hello-there {
-  font-size: 7em;
+  font-size: 6em;
 }
 
 .intro {
@@ -37,4 +37,20 @@
 }
 .general-desc {
   font-size: 2em;
+}
+
+.social-container {
+  margin-top: 20px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.social-item {
+  margin: 20px;
+
+  transition: transform 0.2s;
+}
+.social-item:hover {
+  color: #ffffff;
+  transform: scale(1.2);
 }

@@ -1,6 +1,11 @@
 import React, { SyntheticEvent } from "react";
 import "./AboutMe.css";
-
+import {
+  AiFillGithub,
+  AiFillLinkedin,
+  AiOutlineInstagram,
+  AiOutlineTwitter,
+} from "react-icons/ai";
 const AboutMe = (props: any) => {
   return (
     <div className="about-me-bg">
@@ -10,6 +15,36 @@ const AboutMe = (props: any) => {
       </div>
       <div className="about-me-wellcome general-desc">
         A Game Developer In Love With Programming, AI, And Algorithms.
+      </div>
+      <div className="social-container">
+        <a
+          href="https://github.com/monjar"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <AiFillGithub size={"3.5em"} className="social-item" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/monjar/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <AiFillLinkedin size={"3.5em"} className="social-item" />
+        </a>
+        <a
+          href="https://www.instagram.com/amirali.mnj/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <AiOutlineInstagram size={"3.5em"} className="social-item" />
+        </a>
+        <a
+          href="https://twitter.com/amiralimnj"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <AiOutlineTwitter size={"3.5em"} className="social-item" />
+        </a>
       </div>
     </div>
   );
