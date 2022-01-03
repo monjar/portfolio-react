@@ -5,6 +5,8 @@
   flex-direction: column;
   transition: transform 0.2s;
   cursor: pointer;
+  margin: 10px;
+  font-size: small;
 }
 .nav-button:hover {
   color: #1d4049;
@@ -15,5 +17,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.3em;
 }

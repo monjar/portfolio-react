@@ -6,6 +6,7 @@ import {
   AiOutlineInstagram,
   AiOutlineTwitter,
 } from "react-icons/ai";
+import { FaTelegramPlane } from "react-icons/fa";
 const AboutMe = (props: any) => {
   return (
     <div className="about-me-bg">
@@ -17,6 +18,13 @@ const AboutMe = (props: any) => {
         A Game Developer In Love With Programming, AI, And Algorithms.
       </div>
       <div className="social-container">
+        <a
+          href="https://twitter.com/amiralimnj"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaTelegramPlane size={"3.5em"} className="social-item" />
+        </a>
         <a
           href="https://github.com/monjar"
           target="_blank"

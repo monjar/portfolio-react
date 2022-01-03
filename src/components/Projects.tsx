@@ -5,7 +5,7 @@ import IrregularGrid from "./utils/IrregularGrid";
 const projectsData: Project[] = [
   {
     title: "Raidfield 2",
-    desc: "this is the first project this is the first project this is the first project this is the first project this is the first project this is the first projectthis is the first project this is the first project this is the first project",
+    desc: "A ",
     link: "https://play.google.com/store/apps/details?id=com.alphatikinc.raidfield2&hl=en&gl=US",
     image: "./images/raidfield.webp",
   },
