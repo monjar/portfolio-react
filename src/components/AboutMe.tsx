@@ -19,7 +19,7 @@ const AboutMe = (props: any) => {
       </div>
       <div className="social-container">
         <a
-          href="https://twitter.com/amiralimnj"
+          href="https://t.me/AmiraliMonjar"
           target="_blank"
           rel="noopener noreferrer"
         >

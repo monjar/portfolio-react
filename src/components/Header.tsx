@@ -14,22 +14,22 @@ const Header = (props: any) => {
     <div className="header-bg">
       <NavButton
         title="About me"
-        icon={<CgProfile />}
+        icon={<CgProfile size={"2em"} />}
         onClick={handleNavChange}
       />
       <NavButton
         title="Projects"
-        icon={<BiCodeAlt />}
+        icon={<BiCodeAlt size={"2em"} />}
         onClick={handleNavChange}
       />
       <NavButton
         title="Experience"
-        icon={<MdWork />}
+        icon={<MdWork size={"2em"} />}
         onClick={handleNavChange}
       />
       <NavButton
         title="Education"
-        icon={<IoMdSchool />}
+        icon={<IoMdSchool size={"2em"} />}
         onClick={handleNavChange}
       />
     </div>

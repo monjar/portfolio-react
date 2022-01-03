@@ -56,3 +56,21 @@
   color: #ffffff;
   transform: scale(1.2);
 }
+@media screen and (orientation: portrait) {
+  .social-item {
+    height: 40px;
+    margin: 6px;
+  }
+  .hello-there {
+    font-size: 2.3em;
+    margin-bottom: 0.6em;
+    margin-top: 0.3em;
+  }
+
+  .intro {
+    font-size: 1.8em;
+  }
+  .general-desc {
+    font-size: 1.4em;
+  }
+}

@@ -14,8 +14,9 @@
     saturate(63%) drop-shadow(5px 5px 7px #000000);
   -moz-filter: grayscale(38%) sepia(100%) brightness(88%) hue-rotate(153deg)
     saturate(63%) drop-shadow(5px 5px 7px #000000); */
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   border-radius: 20px;
+  flex-grow: 1;
 }
 .project-item-title {
   width: 100%;
@@ -23,6 +24,7 @@
   margin-bottom: 20px;
   font-weight: bold;
   font-size: 1.2em;
+  flex-grow: 0;
 }
 .project-item-desc::-webkit-scrollbar {
   display: none;
@@ -30,9 +32,23 @@
 .project-item-desc {
   width: 100%;
   text-align: justify;
-  margin-bottom: 20px;
   font-size: 1.1em;
   overflow: scroll; /* Hide scrollbars */
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  flex-grow: 10;
+}
+
+.project-item-stack {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  flex-grow: 1;
+}
+.project-item-stackitem {
+  margin-left: 10px;
+  margin-right: 10px;
 }
