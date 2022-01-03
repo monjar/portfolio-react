@@ -29,11 +29,13 @@
 }
 
 .hello-there {
-  font-size: 6em;
+  font-size: 4em;
+  margin-bottom: 0.6em;
+  margin-top: 0.3em;
 }
 
 .intro {
-  font-size: 3em;
+  font-size: 2.5em;
 }
 .general-desc {
   font-size: 2em;
