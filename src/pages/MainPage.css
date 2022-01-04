@@ -121,3 +121,8 @@ a {
   color: inherit; /* blue colors for links too */
   text-decoration: inherit; /* no underline */
 }
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}

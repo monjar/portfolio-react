@@ -58,7 +58,7 @@ const MainPage = () => {
           </li>
         </ul>
       </div>
-      <div>
+      <div className="main-container">
         <Header selectedNav={nav} handleNaveChange={handleNaveChange} />
         <AboutMe />
         <Projects />

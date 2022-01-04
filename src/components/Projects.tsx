@@ -10,8 +10,14 @@ import {
   SiSpringboot,
   SiJava,
   SiDocker,
+  SiTensorflow,
+  SiQt,
+  SiCplusplus,
+  SiNumpy,
+  SiKeras,
+  SiOpencv,
 } from "react-icons/si";
-import { DiNodejs } from "react-icons/di";
+import { DiNodejs, DiPython } from "react-icons/di";
 const projectsData: Project[] = [
   {
     title: "Super Billiard",
@@ -44,6 +50,29 @@ const projectsData: Project[] = [
       <SiDocker size={"2em"} />,
     ],
   },
+  {
+    title: "AnimateLy",
+    desc: "Desktop application for sensorless motion capture using a single camera. This program uses an AlexNent-based nueral network to transform a video or webcam feed to an animation for a 12 bone humanoid. The application's output can be imported into Unity, Blender and Unreal Engine directly.",
+    link: "https://github.com/monjar/AnimateLy",
+    image: "./images/github.png",
+    stackIcons: [
+      <DiPython size={"2em"} />,
+      <SiTensorflow size={"2em"} />,
+      <SiNumpy size={"2em"} />,
+      <SiKeras size={"2em"} />,
+      <SiOpencv size={"2em"} />,
+      <SiCplusplus size={"2em"} />,
+      <SiQt size={"2em"} />,
+    ],
+  },
+  {
+    title: "Cubic Dreams",
+    desc: "Indie puzzle game made in unity. In this game you control an spirit lost in a puzzled world and in each level you must light the way to emerge victorious from the darkness.",
+    link: "https://github.com/monjar/Cubic-Dreams",
+    image: "./images/cubicdreams.jpg",
+
+    stackIcons: [<SiUnity size={"2em"} />, <SiCsharp size={"2em"} />],
+  },
 ];
 const ProjectItem = (props: any) => {
   const data: Project = props.data;
@@ -65,11 +94,14 @@ const ProjectItem = (props: any) => {
 };
 const Projects = (props: any) => {
   return (
-    <IrregularGrid>
-      {projectsData.map((data: Project) => (
-        <ProjectItem data={data} />
-      ))}
-    </IrregularGrid>
+    <>
+      <div className="project-section-title">Projects</div>
+      <IrregularGrid>
+        {projectsData.map((data: Project) => (
+          <ProjectItem data={data} />
+        ))}
+      </IrregularGrid>
+    </>
   );
 };
 

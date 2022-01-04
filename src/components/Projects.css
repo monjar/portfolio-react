@@ -52,3 +52,14 @@
   margin-left: 10px;
   margin-right: 10px;
 }
+
+.project-section-title {
+  margin-top: 20px;
+  align-self: center;
+  text-align: center;
+  width: 100%;
+  font-size: 2em;
+  background-color: rgba(255, 255, 255, 0.144);
+  color: rgb(255, 255, 255);
+  padding: 15px;
+}
