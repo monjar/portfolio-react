@@ -15,6 +15,7 @@ import {
 } from "react-icons/si";
 import { FaCodeBranch, FaGamepad } from "react-icons/fa";
 import Projects from "../components/Projects";
+import Experience from "../components/Experience";
 const MainPage = () => {
   const [nav, setNav] = React.useState("about-me");
   const handleNaveChange = (selectedNav: string) => {
@@ -65,6 +66,8 @@ const MainPage = () => {
         <AboutMe />
 
         <Projects />
+
+        <Experience />
       </div>
     </>
   );

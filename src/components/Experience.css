@@ -1,0 +1,116 @@
+.exp-container {
+  width: 80%;
+  padding: 50px 0;
+  margin: 50px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.exp-container:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -1px;
+  width: 2px;
+  height: 100%;
+  background: #ccd1d9;
+  z-index: 1;
+}
+
+.exp-timeline-block {
+  width: -webkit-calc(50% + 30px);
+  width: -moz-calc(50% + 30px);
+  width: calc(50% + 30px);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: justify;
+  justify-content: space-between;
+  clear: both;
+}
+
+.exp-timeline-block-right {
+  float: right;
+}
+
+.exp-timeline-block-left {
+  float: left;
+  direction: rtl;
+}
+
+.exp-marker {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #f5f7fa;
+  background: #4fc1e9;
+  margin-top: 10px;
+  z-index: 9999;
+}
+
+.exp-timeline-content {
+  width: 95%;
+  padding: 0 15px;
+  color: rgb(241, 240, 240);
+  font-size: 1.1em;
+}
+
+.exp-timeline-content h3 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: 500;
+  font-size: 1.5em;
+}
+
+.exp-timeline-content span {
+  font-size: 1.2em;
+  color: #d3d2d2;
+}
+
+.exp-timeline-content p {
+  font-size: 1.1em;
+  line-height: 1.5em;
+  word-spacing: 1px;
+  color: rgb(170, 170, 170);
+  text-align: justify;
+}
+.exp-marker-link {
+  z-index: 9999;
+}
+@media screen and (max-width: 768px) {
+  .exp-container {
+    border-style: none;
+    box-shadow: none;
+  }
+  .exp-container:before {
+    left: 30px;
+    width: 2px;
+  }
+  .exp-timeline-block {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .exp-timeline-block-right {
+    float: none;
+  }
+
+  .exp-timeline-block-left {
+    float: none;
+    direction: ltr;
+  }
+}
+
+.Experience-section-title {
+  margin-top: 20px;
+  align-self: center;
+  text-align: center;
+  width: 100%;
+  font-size: 2em;
+  background-color: rgba(255, 255, 255, 0.144);
+  color: rgb(255, 255, 255);
+  padding: 15px;
+}

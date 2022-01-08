@@ -77,7 +77,7 @@ const ProjectItem = (props: any) => {
   return (
     <a className="project-item">
       <div className="project-item-title">{data.title}</div>
-      <a href={data.link}>
+      <a href={data.link} target="_blank" rel="noopener noreferrer">
         <img src={data.image} />
       </a>
       <div className="project-item-desc">{data.desc}</div>

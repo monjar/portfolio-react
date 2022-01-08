@@ -8,6 +8,7 @@ import { scroller } from "react-scroll";
 import { IoMdSchool } from "react-icons/io";
 const Header = (props: any) => {
   const scrollToSection = (sectionName: string) => {
+    // alert(sectionName);
     scroller.scrollTo(sectionName + "-section-title", {
       duration: 500,
       delay: 0,
