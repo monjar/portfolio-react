@@ -40,13 +40,13 @@ const expData: ExperienceItem[] = [
     link: "https://rahnemacollege.com/",
     image: "./images/rahnema.jpeg",
   },
-];
+].reverse();
 const Experience = (props: any) => {
   return (
     <>
       <div className="Experience-section-title">Experiences</div>
       <div className="exp-container">
-        {expData.reverse().map((experience, index) => (
+        {expData.map((experience, index) => (
           <div
             className={
               "exp-timeline-block exp-timeline-block-" +
