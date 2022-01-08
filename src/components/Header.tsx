@@ -4,17 +4,17 @@ import NavButton from "./utils/NavButton";
 import { BiCodeAlt } from "react-icons/bi";
 import { MdWork } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
-import { scroller } from "react-scroll";
+import { scroller, animateScroll } from "react-scroll";
 import { IoMdSchool } from "react-icons/io";
 const Header = (props: any) => {
   const scrollToSection = (sectionName: string) => {
-    // alert(sectionName);
-    scroller.scrollTo(sectionName + "-section-title", {
-      duration: 500,
-      delay: 0,
-      smooth: "easeInOutQuart",
-      offset: -70,
-    });
+    if (sectionName === "Aboutme") animateScroll.scrollToTop();
+    else
+      scroller.scrollTo(sectionName + "-section-title", {
+        delay: 0,
+        smooth: "easeInOutQuart",
+        offset: -70,
+      });
   };
   const handleNavChange = (newValue: string) => {
     props.handleNaveChange(newValue);
@@ -29,11 +29,6 @@ const Header = (props: any) => {
         onClick={handleNavChange}
       />
       <NavButton
-        title="Projects"
-        icon={<BiCodeAlt size={"2em"} />}
-        onClick={handleNavChange}
-      />
-      <NavButton
         title="Experience"
         icon={<MdWork size={"2em"} />}
         onClick={handleNavChange}
@@ -41,6 +36,12 @@ const Header = (props: any) => {
       <NavButton
         title="Education"
         icon={<IoMdSchool size={"2em"} />}
+        onClick={handleNavChange}
+      />
+
+      <NavButton
+        title="Projects"
+        icon={<BiCodeAlt size={"2em"} />}
         onClick={handleNavChange}
       />
     </div>
