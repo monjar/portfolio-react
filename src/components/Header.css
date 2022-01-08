@@ -1,5 +1,5 @@
 .header-bg {
-  background-color: rgba(255, 255, 255, 0.801);
+  background-color: rgba(255, 255, 255, 0.904);
   padding: 0.5em;
   display: flex;
   align-items: center;
@@ -10,6 +10,7 @@
   left: 0;
   width: 100vw;
   height: 7vh;
+  z-index: 100000;
 }
 @media screen and (orientation: portrait) {
   .header-bg {

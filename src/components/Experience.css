@@ -13,7 +13,7 @@
   left: 50%;
   margin-left: -1px;
   width: 2px;
-  height: 100%;
+  height: 90%;
   background: #ccd1d9;
   z-index: 1;
 }
@@ -31,6 +31,7 @@
   -moz-box-pack: justify;
   justify-content: space-between;
   clear: both;
+  min-height: 200px;
 }
 
 .exp-timeline-block-right {
