@@ -15,7 +15,6 @@ const Header = (props: any) => {
       scroller.scrollTo(sectionName + "-section-title", {
         delay: 0,
         smooth: "easeInOutQuart",
-        offset: -70,
       });
   };
   const handleNavChange = (newValue: string) => {
