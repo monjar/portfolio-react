@@ -7,6 +7,7 @@ import {
   AiOutlineTwitter,
 } from "react-icons/ai";
 import { FaTelegramPlane } from "react-icons/fa";
+import { SiGmail, SiSoundcloud } from "react-icons/si";
 const AboutMe = (props: any) => {
   return (
     <div className="about-me-bg">
@@ -52,6 +53,20 @@ const AboutMe = (props: any) => {
           rel="noopener noreferrer"
         >
           <AiOutlineTwitter size={"3.5em"} className="social-item" />
+        </a>
+        <a
+          href="https://soundcloud.com/monjar"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <SiSoundcloud size={"3.5em"} className="social-item" />
+        </a>
+        <a
+          href="mailto:amirali.mnj@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <SiGmail size={"3.5em"} className="social-item" />
         </a>
       </div>
     </div>
