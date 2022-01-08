@@ -59,7 +59,7 @@
 @media screen and (orientation: portrait) {
   .social-item {
     height: 38px;
-    margin: 5px;
+    margin: 1px;
   }
   .hello-there {
     font-size: 2.3em;
