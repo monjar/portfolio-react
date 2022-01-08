@@ -23,14 +23,14 @@ import EducationItem from "../data/models/EducationItem";
 const eduData: EducationItem[] = [
   {
     title: "BEng. Computer Engineering",
-    link: "https://cafebazaar.ir/app/ir.cafebazistudio.eightball",
+    link: "http://en.sbu.ac.ir/SitePages/Home.aspx",
     image: "./images/sbu.jpeg",
     place: "Shahid Beheshti University",
     date: "2017 - 2022",
   },
   {
     title: "High School Diploma",
-    link: "https://cafebazaar.ir/app/ir.cafebazistudio.eightball",
+    link: "https://allame-helli8.com/",
     image: "./images/helli.jpeg",
     place: "Allameh Helli 8 High School",
     date: "2013 - 2017",
