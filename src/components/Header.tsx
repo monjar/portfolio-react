@@ -5,6 +5,8 @@ import { BiCodeAlt } from "react-icons/bi";
 import { MdWork } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { scroller, animateScroll } from "react-scroll";
+import { useScrollDirection } from "react-use-scroll-direction";
+
 import { IoMdSchool } from "react-icons/io";
 const Header = (props: any) => {
   const scrollToSection = (sectionName: string) => {
@@ -20,9 +22,16 @@ const Header = (props: any) => {
     props.handleNaveChange(newValue);
     scrollToSection(newValue);
   };
+  const [direction, setDirection] = React.useState(String);
+  const { isScrollingUp, isScrollingDown } = useScrollDirection();
+
+  React.useEffect(() => {
+    isScrollingDown && setDirection("down");
+    isScrollingUp && setDirection("up");
+  }, [isScrollingDown, isScrollingUp]);
 
   return (
-    <div className="header-bg">
+    <div className={"header-bg " + (direction === "down" ? "hide-header" : "")}>
       <NavButton
         title="About me"
         icon={<CgProfile size={"2em"} />}

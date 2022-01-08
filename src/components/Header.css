@@ -11,9 +11,14 @@
   width: 100vw;
   height: 7vh;
   z-index: 100000;
+
+  transition: top 0.6s ease-in-out;
 }
 @media screen and (orientation: portrait) {
   .header-bg {
     height: 9vh;
   }
+}
+.hide-header {
+  top: -100px;
 }
