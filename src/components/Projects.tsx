@@ -59,10 +59,8 @@ const projectsData: Project[] = [
       <DiPython size={"2em"} />,
       <SiTensorflow size={"2em"} />,
       <SiNumpy size={"2em"} />,
-      <SiKeras size={"2em"} />,
       <SiOpencv size={"2em"} />,
       <SiCplusplus size={"2em"} />,
-      <SiQt size={"2em"} />,
     ],
   },
   {
@@ -95,7 +93,7 @@ const ProjectItem = (props: any) => {
 const Projects = (props: any) => {
   return (
     <>
-      <div className="project-section-title">Projects</div>
+      <div className="Projects-section-title">Projects</div>
       <IrregularGrid>
         {projectsData.map((data: Project) => (
           <ProjectItem data={data} />

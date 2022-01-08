@@ -4,10 +4,20 @@ import NavButton from "./utils/NavButton";
 import { BiCodeAlt } from "react-icons/bi";
 import { MdWork } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
+import { scroller } from "react-scroll";
 import { IoMdSchool } from "react-icons/io";
 const Header = (props: any) => {
+  const scrollToSection = (sectionName: string) => {
+    scroller.scrollTo(sectionName + "-section-title", {
+      duration: 500,
+      delay: 0,
+      smooth: "easeInOutQuart",
+      offset: -70,
+    });
+  };
   const handleNavChange = (newValue: string) => {
     props.handleNaveChange(newValue);
+    scrollToSection(newValue);
   };
 
   return (

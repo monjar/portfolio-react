@@ -3,6 +3,7 @@ import AboutMe from "../components/AboutMe";
 import Header from "../components/Header";
 import "./MainPage.css";
 import { DiJava } from "react-icons/di";
+
 import {
   SiCplusplus,
   SiDocker,
@@ -19,6 +20,7 @@ const MainPage = () => {
   const handleNaveChange = (selectedNav: string) => {
     setNav(selectedNav);
   };
+
   return (
     <>
       <div className="area">
@@ -61,6 +63,7 @@ const MainPage = () => {
       <div className="main-container">
         <Header selectedNav={nav} handleNaveChange={handleNaveChange} />
         <AboutMe />
+
         <Projects />
       </div>
     </>

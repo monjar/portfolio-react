@@ -3,7 +3,7 @@ import "./Utils.css";
 const NavButton = (props: any) => {
   const { onClick, icon, title } = props;
   return (
-    <div className="nav-button" onClick={() => onClick(title)}>
+    <div className="nav-button" onClick={() => onClick(title.trim())}>
       <div className="icon-container">{icon}</div>
       <div>{title}</div>
     </div>
