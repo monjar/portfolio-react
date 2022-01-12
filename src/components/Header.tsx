@@ -30,7 +30,12 @@ const Header = (props: any) => {
   }, [isScrollingDown, isScrollingUp]);
 
   return (
-    <div className={"header-bg " + (direction === "down" ? "hide-header" : "")}>
+    <div
+      className={
+        "header-bg " +
+        (direction === "down" && window.pageYOffset > 500 ? "hide-header" : "")
+      }
+    >
       <NavButton
         title="About me"
         icon={<CgProfile size={"2em"} />}

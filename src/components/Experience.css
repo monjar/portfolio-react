@@ -85,6 +85,10 @@
   z-index: 9999;
 }
 @media screen and (max-width: 768px) {
+  .exp-timeline-content p {
+    font-size: 0.8em;
+    text-align: unset;
+  }
   .exp-container {
     border-style: none;
     box-shadow: none;
