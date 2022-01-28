@@ -5,6 +5,7 @@ import {
   AiFillLinkedin,
   AiOutlineInstagram,
   AiOutlineTwitter,
+  AiOutlineDownload,
 } from "react-icons/ai";
 import { FaTelegramPlane } from "react-icons/fa";
 import { SiGmail, SiSoundcloud } from "react-icons/si";
@@ -67,6 +68,32 @@ const AboutMe = (props: any) => {
           rel="noopener noreferrer"
         >
           <SiGmail size={"3.5em"} className="social-item" />
+        </a>
+      </div>
+      <div className="downloadable-container">
+        <a
+          href="https://t.me/AmiraliMonjar"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="downloadable-item"
+        >
+          <AiOutlineDownload
+            size={"1.2em"}
+            className="downloadable-item-icon"
+          />
+          <div className="downloadable-item-text">CV</div>
+        </a>
+        <a
+          className="downloadable-item "
+          href="https://t.me/AmiraliMonjar"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <AiOutlineDownload
+            size={"1.2em"}
+            className="downloadable-item-icon"
+          />
+          <div className="downloadable-item-text">Resume</div>
         </a>
       </div>
     </div>

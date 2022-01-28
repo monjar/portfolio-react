@@ -77,3 +77,40 @@
     font-size: 1.4em;
   }
 }
+
+.downloadable-container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.downloadable-item {
+  margin: 1.2em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 200px;
+  /* border-style: solid; */
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(92, 92, 92);
+  font-weight: bold;
+  transition: 0.2s;
+  box-shadow: 0 10px 10px rgba(53, 52, 52, 0.418);
+}
+.downloadable-item:hover {
+  color: #1d4049;
+  transform: scale(1.1);
+}
+.downloadable-item-icon {
+  flex-grow: 20;
+  text-align: center;
+}
+
+.downloadable-item-text {
+  flex-grow: 80;
+  text-align: center;
+}
