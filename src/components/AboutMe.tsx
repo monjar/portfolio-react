@@ -72,7 +72,7 @@ const AboutMe = (props: any) => {
       </div>
       <div className="downloadable-container">
         <a
-          href="https://t.me/AmiraliMonjar"
+          href={process.env.PUBLIC_URL + "/pdfs/CV.pdf"}
           target="_blank"
           rel="noopener noreferrer"
           className="downloadable-item"
@@ -85,7 +85,7 @@ const AboutMe = (props: any) => {
         </a>
         <a
           className="downloadable-item "
-          href="https://t.me/AmiraliMonjar"
+          href={process.env.PUBLIC_URL + "/pdfs/Resume.pdf"}
           target="_blank"
           rel="noopener noreferrer"
         >
