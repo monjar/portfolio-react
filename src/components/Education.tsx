@@ -19,23 +19,9 @@ import {
 } from "react-icons/si";
 import { DiNodejs, DiPython } from "react-icons/di";
 import EducationItem from "../data/models/EducationItem";
+import { educationData } from "../data/repository";
+const eduData: EducationItem[] = educationData;
 
-const eduData: EducationItem[] = [
-  {
-    title: "BEng. Computer Engineering",
-    link: "http://en.sbu.ac.ir/SitePages/Home.aspx",
-    image: "./images/sbu.jpeg",
-    place: "Shahid Beheshti University",
-    date: "2017 - 2022",
-  },
-  {
-    title: "High School Diploma",
-    link: "https://allame-helli8.com/",
-    image: "./images/helli.jpeg",
-    place: "Allameh Helli 8 High School",
-    date: "2013 - 2017",
-  },
-];
 const EducationComponentItem = (props: any) => {
   const data: EducationItem = props.data;
   return (
