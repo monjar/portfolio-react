@@ -99,7 +99,7 @@
   color: rgb(92, 92, 92);
   font-weight: bold;
   transition: 0.2s;
-  box-shadow: 0 10px 10px rgba(53, 52, 52, 0.418);
+  box-shadow: 0 15px 10px rgba(43, 42, 42, 0.38);
 }
 .downloadable-item:hover {
   color: #1d4049;
