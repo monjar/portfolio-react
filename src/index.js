@@ -7,7 +7,7 @@ initScrollReveal(targetElements, defaultProps);
 initTiltEffect();
 
 const options = {
-  strings: ['Machine Learning Engineer.', 'Data Scientist.', "NLP Engineer."],
+  strings: ['M.Sc Big Data Science Student at QMUL.', 'Data Scientist.', "ML Engineer.", "NLP Researcher."],
   typeSpeed: 80
 };
 
