@@ -1,0 +1,626 @@
+<!--
+  Hello!
+  -
+  Simplefolio is a clean and responsive portfolio template for Developers!
+  Created by Jacobo Martinez.
+  -
+  Github Repo: https://github.com/cobidev/simplefolio/
+  Readme: https://github.com/cobidev/simplefolio/README.md
+  -
+  For business & inquires, contact me -> jacobojavier98@gmail.com
+-->
+<!DOCTYPE html>
+<html lang="en" class="sr">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="./particles.js"></script>
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
+
+    <!-- Todo: put here your site title -->
+    <title>[Your name here] | Developer</title>
+    <!-- Todo: add some coding keywords below - e.g: (javascript, yourusername, etc) -->
+    <meta name="keywords" content="[username], [name], skill" />
+    <!-- Todo: improve your SEO by adding a small description of you -->
+    <meta name="description" content="[Your name here] | Developer" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="styles.scss" />
+    <script
+      defer
+      src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"
+    ></script>
+
+    <!-- Todo: remove the below script once you finish your portfolio -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </head>
+
+  <!-- Todo: read the following HTML Todos to create your stunning portfolio website -->
+  <body>
+    <div id="top"></div>
+    
+    <!-- **** Hero Section **** -->
+    <section id="hero" class="jumbotron">
+      <div  class="container">
+        <h1 class="hero-title load-hidden">
+          Hi There,
+        <br />
+        I am <span class="text-color-main">Parastoo Falak aflaki</span>
+        <br />
+        <p class="imafolan">
+       I'm a <span class="input"></span>
+      </p>
+        </h1>
+       <div id="particles-js"></div>
+        <p class="hero-cta load-hidden">
+          <a rel="noreferrer" class="cta-btn cta-btn--hero" href="#about"
+            >About me</a>
+           
+            <span style="margin-left:1vw" class="cta-btn cta-btn--hero"><a href="#projects">Projects<svg stroke="white" fill="white" stroke-width="0" viewBox="0 0 320 512" class="cta-btn-angle-down" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path></svg></a></span>
+           
+            <span style="margin-left:1vw" class="cta-btn cta-btn--hero"><a href="assets/parastoo-CV.pdf">Download CV
+            <svg stroke="currentColor" fill="white" stroke-width="0" viewBox="0 0 16 16" class="cta-btn-download" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.887 5.2l-.964-.165A2.5 2.5 0 103.5 10H6v1H3.5a3.5 3.5 0 11.59-6.95 5.002 5.002 0 119.804 1.98A2.501 2.501 0 0113.5 11H10v-1h3.5a1.5 1.5 0 00.237-2.981L12.7 6.854l.216-1.028a4 4 0 10-7.843-1.587l-.185.96z">
+            </path>
+            <path fill-rule="evenodd" d="M5 12.5a.5.5 0 01.707 0L8 14.793l2.293-2.293a.5.5 0 11.707.707l-2.646 2.646a.5.5 0 01-.708 0L5 13.207a.5.5 0 010-.707z" clip-rule="evenodd"></path>
+            <path fill-rule="evenodd" d="M8 6a.5.5 0 01.5.5v8a.5.5 0 01-1 0v-8A.5.5 0 018 6z" clip-rule="evenodd"></path>
+          </svg></a></span>
+          
+          <div class="social-links">
+            <a rel="noreferrer" href="#!" target="_blank">
+              <i class="fa fa-twitter fa-inverse"></i>
+            </a>
+            <a rel="noreferrer" href="#!" target="_blank">
+              <i class="fa fa-linkedin fa-inverse"></i>
+            </a>
+            <a rel="noreferrer" href="#!" target="_blank">
+              <i class="fa fa-github fa-inverse"></i>
+            </a>
+            <a rel="noreferrer" href="#!" target="_blank">
+              <i class="fa fa-medium fa-inverse"></i>
+            </a>
+          </div>
+        <hr />
+          </p>
+         </div>
+    </section>
+    <!-- /END Hero Section -->
+
+    <!-- **** About Section **** -->
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title load-hidden">About me</h2>
+        <div class="row about-wrapper">
+          <div class="col-md-6 col-sm-12">
+            <div class="about-wrapper__image load-hidden">
+              <img
+                alt="Profile Image"
+                class="img-fluid rounded shadow-lg"
+                height="auto"
+                width="300px"
+                src="assets/profile.HEIC"
+                alt="Profile Image"
+              />
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="about-wrapper__info load-hidden">
+            
+              
+                <p class="about-wrapper__info-text text-link">
+                I am a M.Sc Big Data Science Student at QMUL, Data Scientist, ML Engineer, NLP Researcher
+                </p>
+               <p class="about-wrapper__info-text text-link">
+                 Currently I am a student of Big Data Science at Queen Mary University of London.
+                 My interests include data science, natural language processing, artificial intelligence, machine learning, computer vision.
+                </p>
+                <p class="about-wrapper__info-text text-link">
+                  I have a B.Sc in Computer Engineering from Shahid Behehsti University.
+                </p>
+                <ul>
+                  <li >
+                     BSc Cumulative GPA: 3.89/4
+                   </li>
+                  <li >
+                     Ranked within the top 10 GPAs among my graduating class
+                   </li>
+                   <li>
+                    Thesis Title: Fomrality Style Transfer in Persian
+                     </li>
+                 </ul>
+           
+              
+              <p class="about-wrapper__info-text">
+                &ensp; I am also a Pianist, Tennis Player and a Persian Poetry enthusiast.
+              </p>
+             
+              <span class="d-flex mt-3">
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  class="cta-btn cta-btn--resume"
+                  href="assets/resume.pdf"
+                >
+                  View Resume
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /END About Section -->
+
+    <!-- **** Projects Section **** -->
+    <section id="projects">
+      <div class="container">
+        <div class="project-wrapper">
+          <p></p>
+          <h2 class="section-title dark-blue-text">Projects</h2>
+
+          <!-- Notice: each .row is a project -->
+          <div class="row">
+            <div class="col-lg-4 col-sm-12">
+              <div class="project-wrapper__text load-hidden">
+                <h3 class="project-wrapper__text-title">Fomrality Style Transfer</h3>
+                <div>
+                  <p class="mb-4">
+                    Implemented a system that transfers text with colloquial language to formal language using a Bert2Bert model.
+                  </p>
+                </div>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  class="cta-btn cta-btn--hero"
+                  href="#!"
+                >
+                  See Live
+                </a>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  class="cta-btn text-color-main"
+                  href="#!"
+                >
+                  Source Code
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-8 col-sm-12">
+              <div class="project-wrapper__image load-hidden">
+                <a rel="noreferrer" href="#!" target="_blank">
+                  <div
+                    data-tilt
+                    data-tilt-max="4"
+                    data-tilt-glare="true"
+                    data-tilt-max-glare="0.5"
+                    class="thumbnail rounded js-tilt"
+                  >
+                    <img
+                      alt="Project Image"
+                      class="img-fluid"
+                      src="assets/formality-resized.jpg"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- /END Project -->
+
+          <!-- Notice: each .row is a project -->
+          <div class="row">
+            <div class="col-lg-4 col-sm-12">
+              <div class="project-wrapper__text load-hidden">
+                <h3 class="project-wrapper__text-title"> Generative Conversational Bot</h3>
+                <div>
+                  <p class="mb-4">
+
+                    This Chatbot is a TensorFlow implementation of Seq2Seq Mode. It makes use of an attention-based seq2seq RNN model and Golve50d embedding.
+                  </p>
+                </div>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  class="cta-btn cta-btn--hero"
+                  href="#!"
+                >
+                  See Live
+                </a>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  class="cta-btn text-color-main"
+                  href="#!"
+                >
+                  Source Code
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-8 col-sm-12">
+              <div class="project-wrapper__image load-hidden">
+                <a rel="noreferrer" href="#!" target="_blank">
+                  <div
+                    data-tilt
+                    data-tilt-max="4"
+                    data-tilt-glare="true"
+                    data-tilt-max-glare="0.5"
+                    class="thumbnail rounded js-tilt"
+                  >
+                    <img
+                      alt="Project Image"
+                      class="img-fluid"
+                      src="assets/walle.jpg"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- /END Project -->
+
+          <!-- Notice: each .row is a project -->
+          <div class="row">
+            <div class="col-lg-4 col-sm-12">
+              <div class="project-wrapper__text load-hidden">
+                <h3 class="project-wrapper__text-title">Transformer Generative Conversational Bot</h3>
+                <div>
+                  <p class="mb-4">
+                    Implemented generative chatbot using keras with Transformer Model and Persona dataset
+                  </p>
+                </div>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  class="cta-btn cta-btn--hero"
+                  href="#!"
+                >
+                  See Live
+                </a>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  class="cta-btn text-color-main"
+                  href="#!"
+                >
+                  Source Code
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-8 col-sm-12">
+              <div class="project-wrapper__image load-hidden">
+                <a rel="noreferrer" href="#!" target="_blank">
+                  <div
+                    data-tilt
+                    data-tilt-max="4"
+                    data-tilt-glare="true"
+                    data-tilt-max-glare="0.5"
+                    class="thumbnail rounded js-tilt"
+                  >
+                    <img
+                      alt="Project Image"
+                      class="img-fluid"
+                      src="assets/chatbot-resized.jpg"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- /END Project -->
+          <!-- Notice: each .row is a project -->
+          <div class="row">
+            <div class="col-lg-4 col-sm-12">
+              <div class="project-wrapper__text load-hidden">
+                <h3 class="project-wrapper__text-title">Fake Comment Detection</h3>
+                <div>
+                  <p class="mb-4">
+                    Detecting fake comments from real ones using data preprocessing techniques, Feature Engineering and different models 
+                  </p>
+                </div>
+               
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  class="cta-btn text-color-main"
+                  href="#!"
+                >
+                  Source Code
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-8 col-sm-12">
+              <div class="project-wrapper__image load-hidden">
+                <a rel="noreferrer" href="#!" target="_blank">
+                  <div
+                    data-tilt
+                    data-tilt-max="4"
+                    data-tilt-glare="true"
+                    data-tilt-max-glare="0.5"
+                    class="thumbnail rounded js-tilt"
+                  >
+                    <img
+                      alt="Project Image"
+                      class="img-fluid"
+                      src='assets/fake-comment-resized (2).jpg'
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Notice: each .row is a project -->
+          <div class="row">
+            <div class="col-lg-4 col-sm-12">
+              <div class="project-wrapper__text load-hidden">
+                <h3 class="project-wrapper__text-title"> Comment-Verification 
+                </h3>
+                <div>
+                  <p class="mb-4">
+                    Implemented a comment verification system using CountVectorizer, Bayes algorithm and Digikala website's comments dataset
+                  </p>
+                </div>
+                <!-- <a
+                  rel="noreferrer"
+                  target="_blank"
+                  class="cta-btn cta-btn--hero"
+                  href="#!"
+                >
+                  See Live
+                </a> -->
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  class="cta-btn text-color-main"
+                  href="#!"
+                >
+                  Source Code
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-8 col-sm-12">
+              <div class="project-wrapper__image load-hidden">
+                <a rel="noreferrer" href="#!" target="_blank">
+                  <div
+                    data-tilt
+                    data-tilt-max="4"
+                    data-tilt-glare="true"
+                    data-tilt-max-glare="0.5"
+                    class="thumbnail rounded js-tilt"
+                  >
+                    <img
+                      alt="Project Image"
+                      class="img-fluid"
+                      src="assets/p4-resized.jpg"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!---->
+                   <!-- Notice: each .row is a project -->
+                   <div class="row">
+                    <div class="col-lg-4 col-sm-12">
+                      <div class="project-wrapper__text load-hidden">
+                        <h3 class="project-wrapper__text-title">Predict market share for Montreal local TV channels</h3>
+                        <div>
+                          <p class="mb-4">
+                            Predict market share for Montreal TV channels’ data using scikit-learn, Pandas, Matplotlib and Seaborn
+                          </p>
+                        </div>
+                       
+                        <a
+                          rel="noreferrer"
+                          target="_blank"
+                          class="cta-btn text-color-main"
+                          href="#!"
+                        >
+                          Source Code
+                        </a>
+                      </div>
+                    </div>
+                    <div class="col-lg-8 col-sm-12">
+                      <div class="project-wrapper__image load-hidden">
+                        <a rel="noreferrer" href="#!" target="_blank">
+                          <div
+                            data-tilt
+                            data-tilt-max="4"
+                            data-tilt-glare="true"
+                            data-tilt-max-glare="0.5"
+                            class="thumbnail rounded js-tilt"
+                          >
+                            <img
+                              alt="Project Image"
+                              class="img-fluid"
+                              src='assets/market-resized.jpg'
+                            />
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+             <!-- Notice: each .row is a project -->
+             <div class="row">
+              <div class="col-lg-4 col-sm-12">
+                <div class="project-wrapper__text load-hidden">
+                  <h3 class="project-wrapper__text-title">Predict Youtube Video Likes</h3>
+                  <div>
+                    <p class="mb-4">
+                      A competition supported by the twitch data science community. 
+                    </p>
+                  </div>
+                  <a
+                    rel="noreferrer"
+                    target="_blank"
+                    class="cta-btn cta-btn--hero"
+                    href="#!"
+                  >
+                    Link to Kaggle 
+                  </a>
+                  <a
+                    rel="noreferrer"
+                    target="_blank"
+                    class="cta-btn text-color-main"
+                    href="#!"
+                  >
+                    Source Code
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-8 col-sm-12">
+                <div class="project-wrapper__image load-hidden">
+                  <a rel="noreferrer" href="#!" target="_blank">
+                    <div
+                      data-tilt
+                      data-tilt-max="4"
+                      data-tilt-glare="true"
+                      data-tilt-max-glare="0.5"
+                      class="thumbnail rounded js-tilt"
+                    >
+                      <img
+                        alt="Project Image"
+                        class="img-fluid"
+                        src='assets/youtube-resized.jpg'
+                      />
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!---->
+              
+               <!-- Notice: each .row is a project -->
+               <div class="row">
+                <div class="col-lg-4 col-sm-12">
+                  <div class="project-wrapper__text load-hidden">
+                    <h3 class="project-wrapper__text-title">Facial Expression Recognition</h3>
+                    <div>
+                      <p class="mb-4">
+                        Implemented two deep learning models for facial expression recognition (FER) using FER2013 dataset for recognizing 6 emotion of (Anger ,Disgust, Fear, Happy, Sad, Surprise, Neutral).
+                      </p>
+                    </div>
+                   
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      class="cta-btn text-color-main"
+                      href="#!"
+                    >
+                      Source Code
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-8 col-sm-12">
+                  <div class="project-wrapper__image load-hidden">
+                    <a rel="noreferrer" href="#!" target="_blank">
+                      <div
+                        data-tilt
+                        data-tilt-max="4"
+                        data-tilt-glare="true"
+                        data-tilt-max-glare="0.5"
+                        class="thumbnail rounded js-tilt"
+                      >
+                        <img
+                          alt="Project Image"
+                          class="img-fluid"
+                          src='assets/emotion.png'
+                        />
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+                             <!-- Notice: each .row is a project -->
+                             <div class="row">
+                              <div class="col-lg-4 col-sm-12">
+                                <div class="project-wrapper__text load-hidden">
+                                  <h3 class="project-wrapper__text-title">MNist Classification</h3>
+                                  <div>
+                                    <p class="mb-4">
+                                      Implemented a 2-layer Neural Network (without ML Libraries) for classifying MNIST digits using kaggle MNIST-classification data
+                                    </p>
+                                  </div>
+                                 
+                                  <a
+                                    rel="noreferrer"
+                                    target="_blank"
+                                    class="cta-btn text-color-main"
+                                    href="#!"
+                                  >
+                                    Source Code
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="col-lg-8 col-sm-12">
+                                <div class="project-wrapper__image load-hidden">
+                                  <a rel="noreferrer" href="#!" target="_blank">
+                                    <div
+                                      data-tilt
+                                      data-tilt-max="4"
+                                      data-tilt-glare="true"
+                                      data-tilt-max-glare="0.5"
+                                      class="thumbnail rounded js-tilt"
+                                    >
+                                      <img
+                                        alt="Project Image"
+                                        class="img-fluid"
+                                        src='assets/mnist-resized.jpg'
+                                      />
+                                    </div>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+        </div>
+      </div>
+    </section>
+    <!-- /END Projects Section -->
+
+    <!-- **** Contact Section **** -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-wrapper load-hidden">
+          <p class="contact-wrapper__text">[parastoofalakaflaki@gmail.com]</p>
+          <p class="contact-wrapper__text">[+447508688153]</p>
+        
+        </div>
+      </div>
+    </section>
+    <!-- /END Contact Section -->
+
+    <!-- **** Footer Section **** -->
+    <!-- <footer class="footer navbar-static-bottom">
+      <div class="container">
+        <a rel="noreferrer" href="#top" class="back-to-top">
+          <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
+        </a>
+        <div class="social-links">
+          <a rel="noreferrer" href="#!" target="_blank">
+            <i class="fa fa-twitter fa-inverse"></i>
+          </a>
+          <a rel="noreferrer" href="#!" target="_blank">
+            <i class="fa fa-linkedin fa-inverse"></i>
+          </a>
+          <a rel="noreferrer" href="#!" target="_blank">
+            <i class="fa fa-github fa-inverse"></i>
+          </a>
+        </div>
+
+        <hr />
+ -->
+
+       
+    <!-- /END Footer Section -->
+
+    <script defer type="module" src="index.js"></script>
+  </body>
+</html>
