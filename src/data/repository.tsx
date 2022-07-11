@@ -33,6 +33,13 @@ export const aboutMeData = {
 };
 export const educationData: EducationItem[] = [
   {
+    title: "MSc. Game Development (Programming)",
+    link: "https://www.kingston.ac.uk/",
+    image: "./images/kingston.png",
+    place: "Kingston University",
+    date: "2022 - 2023",
+  },
+  {
     title: "BEng. Computer Engineering",
     link: "http://en.sbu.ac.ir/SitePages/Home.aspx",
     image: "./images/sbu.jpeg",
@@ -74,8 +81,8 @@ export const experienceData: ExperienceItem[] = [
     image: "./images/cafe.jpeg",
   },
   {
-    date: "2021 - Present",
-    title: "Backend Development Intern",
+    date: "2021 - 2022",
+    title: "Backend Developer",
     desc: `Working on rahnemacollege.com. Which is an educational websites with courses and videos for Farsi speaking learners (Like
         Coursera or Udemy)`,
     link: "https://rahnemacollege.com/",
@@ -115,19 +122,7 @@ export const projectsData: Project[] = [
       <SiDocker size={"2em"} />,
     ],
   },
-  {
-    title: "AnimateLy",
-    desc: "Desktop application for sensorless motion capture using a single camera. This program uses an AlexNent-based nueral network to transform a video or webcam feed to an animation for a 12 bone humanoid. The application's output can be imported into Unity, Blender and Unreal Engine directly.",
-    link: "https://github.com/monjar/AnimateLy",
-    image: "./images/github.png",
-    stackIcons: [
-      <DiPython size={"2em"} />,
-      <SiTensorflow size={"2em"} />,
-      <SiNumpy size={"2em"} />,
-      <SiOpencv size={"2em"} />,
-      <SiCplusplus size={"2em"} />,
-    ],
-  },
+  
   {
     title: "Cubic Dreams",
     desc: "Indie puzzle game made in unity. In this game you control an spirit lost in a puzzled world and in each level you must light the way to emerge victorious from the darkness.",
@@ -135,5 +130,17 @@ export const projectsData: Project[] = [
     image: "./images/cubicdreams.jpg",
 
     stackIcons: [<SiUnity size={"2em"} />, <SiCsharp size={"2em"} />],
+  },{
+    title: "AnimateLy",
+    desc: "Desktop application for sensorless motion capture using a single camera. This program uses an AlexNent-based nueral network to transform a video or webcam feed to an animation for a 12 bone humanoid. The application's output can be imported into Unity, Blender and Unreal Engine directly.",
+    link: "https://github.com/monjar/AnimateLy",
+    image: "./images/animately.png",
+    stackIcons: [
+      <DiPython size={"2em"} />,
+      <SiTensorflow size={"2em"} />,
+      <SiNumpy size={"2em"} />,
+      <SiOpencv size={"2em"} />,
+      <SiCplusplus size={"2em"} />,
+    ],
   },
 ];
