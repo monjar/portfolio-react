@@ -32,7 +32,7 @@ const EducationComponentItem = (props: any) => {
         <div className="edu-item-date">{data.date}</div>
       </div>
       <a href={data.link} target="_blank" rel="noopener noreferrer">
-        <img src={data.image} />
+        <img src={data.image} className="edu-item-image" />
       </a>
     </div>
   );

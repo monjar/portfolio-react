@@ -122,7 +122,7 @@ export const projectsData: Project[] = [
       <SiDocker size={"2em"} />,
     ],
   },
-  
+
   {
     title: "Cubic Dreams",
     desc: "Indie puzzle game made in unity. In this game you control an spirit lost in a puzzled world and in each level you must light the way to emerge victorious from the darkness.",
@@ -130,7 +130,7 @@ export const projectsData: Project[] = [
     image: "./images/cubicdreams.jpg",
 
     stackIcons: [<SiUnity size={"2em"} />, <SiCsharp size={"2em"} />],
-  },{
+  }, {
     title: "AnimateLy",
     desc: "Desktop application for sensorless motion capture using a single camera. This program uses an AlexNent-based nueral network to transform a video or webcam feed to an animation for a 12 bone humanoid. The application's output can be imported into Unity, Blender and Unreal Engine directly.",
     link: "https://github.com/monjar/AnimateLy",
