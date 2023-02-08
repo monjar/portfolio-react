@@ -17,7 +17,10 @@ const AboutMe = (props: any) => {
         <h1 className="hello-there">{aboutMeData.heading}</h1>
         <h3 className="intro">{aboutMeData.subHeading}</h3>
       </div>
-      <div className="about-me-wellcome general-desc">{aboutMeData.intro}</div>
+      {aboutMeData.intro.map(intro=>(
+        <div className="about-me-wellcome general-desc">{intro}</div>
+      ))}
+      
       <div className="social-container">
         {aboutMeData.social.telegram && (
           <a
@@ -94,7 +97,7 @@ const AboutMe = (props: any) => {
       </div>
       <div className="downloadable-container">
         <a
-          href={process.env.PUBLIC_URL + "/pdfs/CV.pdf"}
+          href={process.env.PUBLIC_URL + "/pdfs/GameDev_CV.pdf"}
           target="_blank"
           rel="noopener noreferrer"
           className="downloadable-item"
@@ -103,20 +106,9 @@ const AboutMe = (props: any) => {
             size={"1.2em"}
             className="downloadable-item-icon"
           />
-          <div className="downloadable-item-text">CV</div>
+          <div className="downloadable-item-text">Download CV</div>
         </a>
-        <a
-          className="downloadable-item "
-          href={process.env.PUBLIC_URL + "/pdfs/Resume.pdf"}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <AiOutlineDownload
-            size={"1.2em"}
-            className="downloadable-item-icon"
-          />
-          <div className="downloadable-item-text">Resume</div>
-        </a>
+        
       </div>
     </div>
   );

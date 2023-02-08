@@ -1,10 +1,10 @@
 .header-bg {
-  background-color: rgba(255, 255, 255, 0.904);
+  background-color: rgba(255, 255, 255, 0.973);
   padding: 20px;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  color: rgb(39, 39, 39);
+  color: rgb(78, 78, 78);
   position: fixed;
   top: 0;
   left: 0;
@@ -12,11 +12,14 @@
   height: 60px;
   z-index: 100000;
   transition: top 0.6s ease-in-out;
+  border-bottom-style: solid;
+  border-bottom-width: 5px;
+  border-color: rgba(69, 114, 124, 0.637);
 }
 
 @media screen and (orientation: portrait) {
   .header-bg {
-    height: 9vh;
+    height: 10vh;
   }
 }
 

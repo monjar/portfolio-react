@@ -1,5 +1,5 @@
 .about-me-bg {
-  margin-top: 8em;
+  margin-top: 4em;
   margin-left: 3em;
 
   margin-right: 3em;
@@ -17,7 +17,6 @@
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  margin: 0.5em;
   text-align: center;
 }
 .about-me-desc {
@@ -29,16 +28,20 @@
 }
 
 .hello-there {
-  font-size: 3em;
-  margin-bottom: 0.6em;
-  margin-top: 0.3em;
+  font-size: 2em;
+  margin: 0.5em;
+
+  /* margin-bottom: 0.6em; */
 }
 
 .intro {
-  font-size: 2.5em;
+  font-size: 1.6em;
+  margin-bottom: 0.5em;
 }
 .general-desc {
-  font-size: 2em;
+  font-size: 1.2em;  
+  margin: 0.1em;
+
 }
 
 .social-container {
@@ -48,10 +51,13 @@
   display: flex;
   align-content: center;
   justify-content: center;
+  width: 100%;
 }
 .social-item {
-  margin: 20px;
-
+  margin: 10px;
+  
+  height: 36px;
+  width: 36px;
   transition: transform 0.2s;
 }
 .social-item:hover {
@@ -60,21 +66,21 @@
 }
 @media screen and (orientation: portrait) {
   .social-item {
-    height: 33px;
-    width: 33px;
+    height: 26px;
+    width: 26px;
     margin: 7.5px;
   }
   .hello-there {
-    font-size: 2.3em;
+    font-size: 2em;
     margin-bottom: 0.6em;
     margin-top: 0.3em;
   }
 
   .intro {
-    font-size: 1.8em;
+    font-size: 1.4em;
   }
   .general-desc {
-    font-size: 1.4em;
+    font-size: 1.1em;
   }
 }
 

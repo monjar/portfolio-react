@@ -23,8 +23,7 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "react-scripts build && xcopy  ./build ../monjar.github.io/ && cd ../monjar.github.io && git add . && git commit -m \"Updated page\" && git push origin master && echo 'Finished Deploying to github pages'",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -47,6 +46,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "homepage": "https://monjar.github.io/"
+  }
 }

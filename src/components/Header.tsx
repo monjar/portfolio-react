@@ -33,7 +33,7 @@ const Header = (props: any) => {
     <div
       className={
         "header-bg " +
-        (direction === "down" && window.pageYOffset > 500 ? "hide-header" : "")
+        (direction === "down" && window.pageYOffset > 200 ? "hide-header" : "")
       }
     >
       <NavButton

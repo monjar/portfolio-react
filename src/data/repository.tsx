@@ -17,9 +17,11 @@ import ExperienceItem from "./models/ExperienceItem";
 import Project from "./models/Project";
 
 export const aboutMeData = {
-  heading: "Hello There!",
-  subHeading: "I'm Amirali Monjar",
-  intro: "A Game Developer In Love With Programming, AI, And Algorithms.",
+  heading: "Welcome Traveller",
+  subHeading: "I Am Amirali Monjar",
+  intro: [`An Artificer Of Games And Summoner Of Bugs.`,
+  `I See You Have Found Your Way Into My Gallery Of Works By... Well, Let's Call It Destiny!`
+],
   social: {
     telegram: "https://t.me/AmiraliMonjar",
     github: "https://github.com/monjar",
@@ -83,10 +85,16 @@ export const experienceData: ExperienceItem[] = [
   {
     date: "2021 - 2022",
     title: "Backend Developer",
-    desc: `Working on rahnemacollege.com. Which is an educational websites with courses and videos for Farsi speaking learners (Like
+    desc: `Worked on rahnemacollege.com. Which is an educational websites with courses and videos for Farsi speaking learners (Like
         Coursera or Udemy)`,
     link: "https://rahnemacollege.com/",
     image: "./images/rahnema.jpeg",
+  },{
+    date: "2022 - 2023",
+    title: "Game Developer",
+    desc: `Worked on a Karaoke PVP game with thousands of different songs and a pitch detection system`,
+    link: "https://www.linkedin.com/company/pioneer-games/",
+    image: "./images/pgs.png",
   },
 ];
 
