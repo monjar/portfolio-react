@@ -8,11 +8,13 @@ import {
   Link
 } from "react-router-dom";
 import AnimateLyPage from "./pages/AnimateLyPage";
+import JunkYardBlogPage from "./pages/JunkyardBlogPage";
 const App = () => {
   return (
     <div className="app">
       <Router>
        <Routes>
+          <Route path="/JunkYardsBlog" element={<JunkYardBlogPage/>}/>
           <Route path="/AnimateLy" element={<AnimateLyPage/>}/>
           <Route path="/" element={<MainPage/>}/>
         </Routes>
