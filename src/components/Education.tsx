@@ -2,22 +2,7 @@ import React, { SyntheticEvent } from "react";
 import Project from "../data/models/Project";
 import "./Education.css";
 import IrregularGrid from "./utils/IrregularGrid";
-import {
-  SiUnity,
-  SiCsharp,
-  SiLua,
-  SiGoland,
-  SiSpringboot,
-  SiJava,
-  SiDocker,
-  SiTensorflow,
-  SiQt,
-  SiCplusplus,
-  SiNumpy,
-  SiKeras,
-  SiOpencv,
-} from "react-icons/si";
-import { DiNodejs, DiPython } from "react-icons/di";
+
 import EducationItem from "../data/models/EducationItem";
 import { educationData } from "../data/repository";
 const eduData: EducationItem[] = educationData;

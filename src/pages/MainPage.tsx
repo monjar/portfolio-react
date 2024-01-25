@@ -17,6 +17,7 @@ import { FaCodeBranch, FaGamepad } from "react-icons/fa";
 import Projects from "../components/Projects";
 import Experience from "../components/Experience";
 import Education from "../components/Education";
+import Gallery from "../components/Gallery";
 const MainPage = () => {
   const [nav, setNav] = React.useState("about-me");
   const handleNaveChange = (selectedNav: string) => {
@@ -65,7 +66,7 @@ const MainPage = () => {
       <div className="main-container">
         <Header selectedNav={nav} handleNaveChange={handleNaveChange} />
         <AboutMe />
-
+        <Gallery/>
         <Experience />
 
         <Education />

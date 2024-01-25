@@ -28,7 +28,7 @@ const AboutMe = (props: any) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaTelegramPlane size={"3.5em"} className="social-item" />
+            <FaTelegramPlane className="social-item" />
           </a>
         )}
         {aboutMeData.social.github && (
@@ -37,7 +37,7 @@ const AboutMe = (props: any) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <AiFillGithub size={"3.5em"} className="social-item" />
+            <AiFillGithub  className="social-item" />
           </a>
         )}
         {aboutMeData.social.linkedin && (
@@ -46,7 +46,7 @@ const AboutMe = (props: any) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <AiFillLinkedin size={"3.5em"} className="social-item" />
+            <AiFillLinkedin  className="social-item" />
           </a>
         )}
         {aboutMeData.social.instagram && (
@@ -55,25 +55,17 @@ const AboutMe = (props: any) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <AiOutlineInstagram size={"3.5em"} className="social-item" />
+            <AiOutlineInstagram className="social-item" />
           </a>
         )}
-        {aboutMeData.social.twitter && (
-          <a
-            href={aboutMeData.social.twitter}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <AiOutlineTwitter size={"3.5em"} className="social-item" />
-          </a>
-        )}
+        
         {aboutMeData.social.soundCloud && (
           <a
             href={aboutMeData.social.soundCloud}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <SiSoundcloud size={"3.5em"} className="social-item" />
+            <SiSoundcloud  className="social-item" />
           </a>
         )}
         {aboutMeData.social.gmail && (
@@ -82,7 +74,7 @@ const AboutMe = (props: any) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <SiGmail size={"3.5em"} className="social-item" />
+            <SiGmail  className="social-item" />
           </a>
         )}
         {aboutMeData.social.medium && (
@@ -91,13 +83,13 @@ const AboutMe = (props: any) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <SiMedium size={"3.5em"} className="social-item" />
+            <SiMedium  className="social-item" />
           </a>
         )}
       </div>
       <div className="downloadable-container">
         <a
-          href={process.env.PUBLIC_URL + "/pdfs/GameDev_CV.pdf"}
+        href={process.env.PUBLIC_URL + "/pdfs/Amirali_Monjar_Game_Dev.pdf"}
           target="_blank"
           rel="noopener noreferrer"
           className="downloadable-item"

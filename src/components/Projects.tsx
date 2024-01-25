@@ -2,22 +2,7 @@ import React, { SyntheticEvent } from "react";
 import Project from "../data/models/Project";
 import "./Projects.css";
 import IrregularGrid from "./utils/IrregularGrid";
-import {
-  SiUnity,
-  SiCsharp,
-  SiLua,
-  SiGoland,
-  SiSpringboot,
-  SiJava,
-  SiDocker,
-  SiTensorflow,
-  SiQt,
-  SiCplusplus,
-  SiNumpy,
-  SiKeras,
-  SiOpencv,
-} from "react-icons/si";
-import { DiNodejs, DiPython } from "react-icons/di";
+
 import { projectsData } from "../data/repository";
 
 const ProjectItem = (props: any) => {

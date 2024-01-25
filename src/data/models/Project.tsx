@@ -6,5 +6,6 @@ export default class Project {
   desc?: string;
   date?: string;
   link?: string;
+  video?: string;
   stackIcons?: JSX.Element[];
 }

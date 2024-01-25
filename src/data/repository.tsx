@@ -1,27 +1,17 @@
-import { DiNodejs, DiPython } from "react-icons/di";
-import {
-  SiUnity,
-  SiLua,
-  SiGoland,
-  SiCsharp,
-  SiJava,
-  SiSpringboot,
-  SiDocker,
-  SiTensorflow,
-  SiNumpy,
-  SiOpencv,
-  SiCplusplus,
-} from "react-icons/si";
+import { DiJava, DiNodejs, DiPython } from "react-icons/di";
+
 import EducationItem from "./models/EducationItem";
 import ExperienceItem from "./models/ExperienceItem";
 import Project from "./models/Project";
+import { FaMeta } from "react-icons/fa6";
+import { SiCplusplus, SiCsharp, SiDocker, SiGoland, SiKeras, SiLua, SiMapbox, SiNumpy, SiOpenai, SiOpencv, SiPython, SiSpringboot, SiTensorflow, SiUnity } from "react-icons/si";
 
 export const aboutMeData = {
   heading: "Welcome Traveller",
   subHeading: "I Am Amirali Monjar",
   intro: [`An Artificer Of Games And Summoner Of Bugs.`,
-  `I See You Have Found Your Way Into My Gallery Of Works By... Well, Let's Call It Destiny!`
-],
+    `I See You Have Found Your Way Into My Gallery Of Works By... Well, Let's Call It Destiny!`
+  ],
   social: {
     telegram: "https://t.me/AmiraliMonjar",
     github: "https://github.com/monjar",
@@ -89,12 +79,18 @@ export const experienceData: ExperienceItem[] = [
         Coursera or Udemy)`,
     link: "https://rahnemacollege.com/",
     image: "./images/rahnema.jpeg",
-  },{
+  }, {
     date: "2022 - 2023",
     title: "Game Developer",
     desc: `Worked on a Karaoke PVP game with thousands of different songs and a pitch detection system`,
     link: "https://www.linkedin.com/company/pioneer-games/",
     image: "./images/pgs.png",
+  }, {
+    date: "2023 - 2024",
+    title: "AI Research Assistant",
+    desc: `Worked on a Karaoke PVP game with thousands of different songs and a pitch detection system`,
+    link: "https://www.kingston.ac.uk/",
+    image: "./images/kingston.png",
   },
 ];
 
@@ -124,7 +120,7 @@ export const projectsData: Project[] = [
     link: "https://rahnemacollege.com/",
     image: "./images/rahnema.jpeg",
     stackIcons: [
-      <SiJava size={"2em"} />,
+      <DiJava size={"2em"} />,
       <SiSpringboot size={"2em"} />,
       <DiNodejs size={"2em"} />,
       <SiDocker size={"2em"} />,
@@ -151,4 +147,53 @@ export const projectsData: Project[] = [
       <SiCplusplus size={"2em"} />,
     ],
   },
+];
+
+
+
+export const galleryData: Project[] = [
+  {
+    title: "Mage Hands",
+    desc: 'VR Game where you are a wizard and can cast spells with your hand gestures.',
+    video: "https://www.youtube.com/embed/-PEmQkcHclY?si=u80p_dP6rpjUyVK6",
+    stackIcons: [
+      <SiUnity size={"2em"} />,
+      <FaMeta size={"2em"} />,
+    ],
+  }, {
+    title: "Enchanted Realms",
+    desc: 'A VR prototype of MelodyMuse, a wearable device that lets you produce music in real-time using AI.',
+    video: "https://www.youtube.com/embed/jbacmKkosa4?si=WmUQaC56lNnfuMCS",
+    stackIcons: [
+      <SiUnity size={"2em"} />,
+      <FaMeta size={"2em"} />,
+      <SiMapbox size={"2em"} />,
+      <SiOpenai size={"2em"} />,
+      <SiPython size={"2em"} />,
+      <SiKeras size={"2em"} />,
+      <SiCplusplus size = { "2em" } />,
+    ],
+  },
+  {
+    title: "Sentient Strokes",
+    desc: 'This is Sentient Strokes, A game where you are the manager of a gallery, But the gallery itself is sentient and talks to you. You can ask it to create art then critics come around and comment on them.',
+    video: "https://www.youtube.com/embed/3fiSZIrx-Pc?si=gV2wnzgP8QPJF4IO",
+    stackIcons: [
+      <SiUnity size={"2em"} />,
+      <SiOpenai size={"2em"} />,
+    ],
+  },
+  {
+    title: "MelodyMuse",
+    desc: 'A VR prototype of MelodyMuse, a wearable device that lets you produce music in real-time using AI.',
+    video: "https://www.youtube.com/embed/JOXD_-y0c1I?si=dhcAt-gxEbqCYpld",
+    stackIcons: [
+      <SiUnity size={"2em"} />,
+      <SiOpenai size={"2em"} />,
+      <SiPython size={"2em"} />,
+      <SiKeras size={"2em"} />,
+    ],
+  }
+
+
 ];
