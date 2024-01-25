@@ -108,7 +108,7 @@
   box-shadow: 0 10px 10px rgba(53, 52, 52, 0.418);
 }
 .downloadable-item:hover {
-  color: #1d4049;
+  color: #686969;
   transform: scale(1.1);
 }
 .downloadable-item-icon {
