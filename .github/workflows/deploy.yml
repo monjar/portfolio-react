@@ -1,0 +1,43 @@
+name: Build and deploy to monjar.github.io
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+        env:
+          # CRA treats lint warnings as errors when CI=true (the default on
+          # GitHub Actions). Keep the build from failing on warnings.
+          CI: false
+
+      - name: Publish build to monjar.github.io
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.PERSONAL_TOKEN }}
+          external_repository: monjar/monjar.github.io
+          publish_branch: master
+          publish_dir: ./build
+          # Preserve the custom domain configured for the Pages site.
+          cname: monjar.dev
+          commit_message: "Deploy from portfolio-react@${{ github.sha }}"
