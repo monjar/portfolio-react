@@ -30,7 +30,7 @@ const Tome = () => {
   );
 
   return (
-    <main className="view">
+    <main className="view codex-view">
       <article className="tome">
         <div className="tome-wrap">
           {posts === null ? null : !post ? (

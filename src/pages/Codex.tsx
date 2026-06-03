@@ -21,7 +21,7 @@ const Codex = () => {
   useReveal([posts]);
 
   return (
-    <main className="view">
+    <main className="view codex-view">
       <section className="codex-head">
         <div className="wrap">
           <a

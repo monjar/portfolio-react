@@ -332,6 +332,12 @@ body::after {
 .foot span { font-family: var(--display); font-size: 11px; letter-spacing:.18em; text-transform: uppercase; color: var(--ink-3); }
 
 /* ════ BLOG / THE CODEX ══════════════════════════════════════════════════ */
+/* the blog pages share the hero's themed sky so the backdrop tracks the
+   active palette (royal/forest) instead of reading as flat parchment */
+.codex-view::before {
+  content:""; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background: linear-gradient(180deg, var(--sky-1) 0%, var(--sky-2) 46%, var(--parch) 100%);
+}
 .codex-head { text-align:center; padding: clamp(150px,18vh,210px) 0 clamp(20px,4vw,40px); position:relative; z-index:5; }
 .codex-head h1 { font-family: var(--display); font-weight:900; font-size: clamp(44px,8vw,116px); line-height:1; margin: 16px 0 0; color: var(--ink); }
 .codex-head h1 .crimson { color: var(--crimson); }
