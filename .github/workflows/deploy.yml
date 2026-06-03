@@ -34,7 +34,7 @@ jobs:
       - name: Publish build to monjar.github.io
         uses: peaceiris/actions-gh-pages@v4
         with:
-          personal_token: ${{ secrets.PERSONAL_TOKEN }}
+          personal_token: ${{ secrets.DEPLOY_TOKEN }}
           external_repository: monjar/monjar.github.io
           publish_branch: master
           publish_dir: ./build
