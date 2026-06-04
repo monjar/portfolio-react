@@ -341,7 +341,7 @@ body::after {
 .codex-head { text-align:center; padding: clamp(150px,18vh,210px) 0 clamp(20px,4vw,40px); position:relative; z-index:5; }
 .codex-head h1 { font-family: var(--display); font-weight:900; font-size: clamp(44px,8vw,116px); line-height:1; margin: 16px 0 0; color: var(--ink); }
 .codex-head h1 .crimson { color: var(--crimson); }
-.codex-list { max-width: 880px; margin: 0 auto; padding-bottom: clamp(50px,8vw,100px); }
+.codex-list { max-width: 1080px; margin: 0 auto; padding-bottom: clamp(50px,8vw,100px); }
 .codex-card {
   display:grid; grid-template-columns: 64px 1fr; gap: clamp(20px,3vw,40px);
   padding: clamp(28px,4vw,46px) 0; border-bottom: 1px solid var(--line-2); cursor:pointer;
@@ -360,7 +360,7 @@ body::after {
 
 /* ════ READING VIEW ══════════════════════════════════════════════════════ */
 .tome { padding: clamp(130px,16vh,190px) 0 clamp(70px,9vw,130px); position:relative; z-index:5; }
-.tome-wrap { max-width: 720px; margin:0 auto; padding-inline: var(--pad); }
+.tome-wrap { max-width: 880px; margin:0 auto; padding-inline: var(--pad); }
 .back-link { font-family: var(--display); font-weight:500; font-size: 12px; letter-spacing:.2em; text-transform:uppercase; color: var(--ink-3); display:inline-flex; gap:10px; align-items:center; margin-bottom: clamp(36px,5vw,56px); transition: color .2s; }
 .back-link:hover { color: var(--crimson); }
 .tome header { text-align:center; margin-bottom: clamp(34px,5vw,52px); }
