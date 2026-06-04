@@ -1,4 +1,4 @@
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Rampart from "./components/Rampart";
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
@@ -7,7 +7,7 @@ import Tome from "./pages/Tome";
 import "./styles/codex.css";
 
 const App = () => (
-  <HashRouter>
+  <BrowserRouter>
     <Rampart />
     <Nav />
     <Routes>
@@ -16,7 +16,7 @@ const App = () => (
       <Route path="/blog/:slug" element={<Tome />} />
       <Route path="*" element={<Home />} />
     </Routes>
-  </HashRouter>
+  </BrowserRouter>
 );
 
 export default App;
