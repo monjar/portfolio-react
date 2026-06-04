@@ -75,6 +75,21 @@ export interface Work {
 export const works: Work[] = [
   {
     num: "I",
+    craft: "Order of the Companion",
+    title: "Mochiro",
+    desc: "A robot companion project with expressive face animations, custom C++ display driver, and AI-powered interactions.",
+    link: "https://mochiro.co.uk/",
+    stack: [icon(SiCplusplus), icon(SiPython), icon(SiOpenai)],
+  },
+  {
+    num: "II",
+    craft: "Order of Rendering",
+    title: "Custom 3D Renderer",
+    desc: "A C++ Vulkan-based renderer built from scratch with full PBR pipeline, including Cook-Torrance BRDF, normal mapping, and advanced lighting models. Features frustum culling and optimized render loops.",
+    stack: [icon(SiCplusplus)],
+  },
+  {
+    num: "III",
     craft: "Order of War",
     title: "Raidfield 2",
     desc: "An MMO third-person shooter where players clash across a WWII-inspired field and seize objectives. Forged within Alphatik inc.",
@@ -82,7 +97,7 @@ export const works: Work[] = [
     stack: [icon(SiUnity), icon(SiSharp)],
   },
   {
-    num: "II",
+    num: "IV",
     craft: "Order of the Green Baize",
     title: "Super Billiard",
     desc: "A multiplayer pool game for the Android realm, a Persian rendering of 8-Ball Pool, raised within Cafe Bazaar.",
@@ -90,7 +105,7 @@ export const works: Work[] = [
     stack: [icon(SiUnity), icon(SiLua), icon(SiGoland), icon(SiSharp)],
   },
   {
-    num: "III",
+    num: "V",
     craft: "Order of Shadows",
     title: "Cubic Dreams",
     desc: "An indie puzzle game made in Unity. You guide a spirit lost in a puzzled world, lighting the way to emerge victorious from the dark.",
@@ -98,7 +113,7 @@ export const works: Work[] = [
     stack: [icon(SiUnity), icon(SiSharp)],
   },
   {
-    num: "IV",
+    num: "VI",
     craft: "Order of Sight",
     title: "AnimateLy",
     desc: "A desktop tool for sensorless motion capture from a single camera. An AlexNet-based network turns video into animation for a humanoid, exportable to Unity, Blender and Unreal.",
@@ -112,7 +127,7 @@ export const works: Work[] = [
     ],
   },
   {
-    num: "V",
+    num: "VII",
     craft: "Order of Sorcery",
     title: "Mage Hands",
     desc: "A VR game in which you are a wizard, casting spells through the gestures of your own hands.",
@@ -120,7 +135,7 @@ export const works: Work[] = [
     stack: [icon(SiUnity), icon(FaMeta)],
   },
   {
-    num: "VI",
+    num: "VIII",
     craft: "Order of the Muse",
     title: "Sentient Strokes",
     desc: "A game where you manage a gallery, but the gallery itself is sentient and speaks to you. Bid it create art, then watch the critics gather to judge.",
@@ -128,7 +143,7 @@ export const works: Work[] = [
     stack: [icon(SiUnity), icon(SiOpenai)],
   },
   {
-    num: "VII",
+    num: "IX",
     craft: "Order of Song",
     title: "MelodyMuse",
     desc: "A VR prototype of a wearable that lets you conjure music in real time with the aid of machine intelligence.",
@@ -136,7 +151,7 @@ export const works: Work[] = [
     stack: [icon(SiUnity), icon(SiOpenai), icon(SiPython), icon(SiKeras)],
   },
   {
-    num: "VIII",
+    num: "X",
     craft: "Order of Realms",
     title: "Enchanted Realms",
     desc: "A VR prototype weaving real-time worldcraft with mapping and machine intelligence, a realm that answers to your hand.",
@@ -152,7 +167,7 @@ export const works: Work[] = [
     ],
   },
   {
-    num: "IX",
+    num: "XI",
     craft: "Order of the Scriptorium",
     title: "Rahnema College",
     desc: "An educational keep of courses and videos for Persian-speaking learners, with registration, classes, lectures and assignments, in the manner of Coursera.",
@@ -170,6 +185,12 @@ export interface ChronEntry {
 }
 
 export const chronicle: ChronEntry[] = [
+  {
+    when: "2024 - Present",
+    title: "Software Specialist",
+    place: "· RSM UK",
+    desc: "Designing and implementing automation technologies for Tax processes with Python, JavaScript, and LLMs. Building AI-driven solutions and consulting with businesses on process automation, leading client engagements and collaborating with tax experts.",
+  },
   {
     when: "2023 - 2024",
     title: "AI Research Assistant",
