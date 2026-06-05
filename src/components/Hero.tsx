@@ -20,10 +20,9 @@ const Hero = () => {
           {hero.firstName} <span className="crimson">{hero.lastName}</span>
         </h1>
         <p className="hero-lede hl d3">
-          Artificer of <strong>games</strong> and summoner of{" "}
-          <strong>bugs</strong>, a software engineer who bends <em>C++</em>,{" "}
-          <em>C#</em> and <em>Unity</em> to make worlds that breathe and play
-          that feels alive.
+          Artificer of automata and summoner of bugs, and a wizard of games.
+          Nerd of the north and first of his name (to have played WOW for 45
+          hours straight in 2012)
         </p>
         <div className="hero-cta hl d4">
           <button
