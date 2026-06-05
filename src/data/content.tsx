@@ -40,24 +40,23 @@ export const hero = {
 /* ── The Maker (illuminated about) — real story, fantasy voice ─────────── */
 export const makerParagraphs: ReactNode[] = [
   <>
-    In a small workshop lit by the glow of compiling code, Monjar writes the
-    unglamorous incantations that decide whether a world feels alive in the
-    hand, an <strong>artificer of games</strong> and a most diligent{" "}
-    <em>summoner of bugs</em>.
+    I'm Amirali, a software engineer who likes building things that feel alive.
+    Games, AI systems, interactive tools, and the occasional cursed prototype.
   </>,
   <>
-    His craft is <strong>C++</strong>, <strong>C#</strong> and{" "}
-    <strong>Unity</strong>: gameplay mechanics, real-time multiplayer, physics,
-    and the data-oriented engine work that keeps a game running at frame rate.
-    He has forged titles shipped upon Steam, the App Store and Google Play, and
-    bears an <strong>MSc in Game Development</strong> from Kingston University,
-    London.
+    I love games and making them, especially the systems behind them: engines,
+    characters, worlds, physics, behaviours, and all the tiny mechanics that
+    make something fun. Lately, I've also been working on a robot companion,
+    which is basically where my love of AI, games, and strange little creatures
+    all meet.
   </>,
   <>
-    Of late his curiosity has wandered toward enchantments of a newer kind:
-    motion capture, perception, and machine intelligence woven into play. Where{" "}
-    <em>every millisecond is a coin</em> that must be spent wisely, he works
-    close to the metal so that motion reads as <em>alive</em>.
+    Outside of code, I play basketball, D&amp;D, and far too many games for
+    someone who claims to be busy. I also play setar and guitar horrendously.
+  </>,
+  <>
+    This site is where I keep my projects, experiments, unfinished quests, and
+    things I probably started at 2am.
   </>,
 ];
 
