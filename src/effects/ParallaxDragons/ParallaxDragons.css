@@ -1,0 +1,33 @@
+.pdragons { position: absolute; inset: 0; z-index: var(--z-dragons); pointer-events: none; overflow: hidden; }
+.pdragons__layer { position: absolute; inset: 0; will-change: transform; }
+.pdragons__layer--far { filter: blur(.6px) saturate(.6); }
+@media (max-width: 480px) { .pdragons__layer--near { display: none; } }
+
+/* sprite-frame dragon: 28-frame horizontal sheet (240×246 per frame).
+   `drake` cycles the frames (the wing flap), `flyN` drifts it across the sky.
+   background-size: 2800% keeps each frame == element width, so frame stepping
+   is scale-independent and works at every dragon size. */
+.dragon {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 2800% 100%;
+  aspect-ratio: 240 / 246;
+  opacity: var(--dragon-op);
+}
+/* the sheet is a dark silhouette — invert it on the dark sky so it stays visible */
+[data-palette="forest"] .dragon { filter: invert(1) brightness(1.12); }
+.dragon.d1 { width: 188px; top: 12%; left: 100%; animation: fly1 46s linear infinite -8s, drake 1.05s steps(28, jump-none) infinite; }
+.dragon.d2 { width: 120px; top: 30%; left: 100%; opacity: calc(var(--dragon-op) * 0.75); animation: fly2 64s linear infinite -20s, drake 1.25s steps(28, jump-none) infinite; }
+.dragon.d3 { width: 84px;  top: 8%;  left: 100%; opacity: calc(var(--dragon-op) * 0.55); animation: fly3 82s linear infinite -40s, drake 0.95s steps(28, jump-none) infinite; }
+/* dragon faces left, so it flies right → left across the viewport */
+@keyframes fly1 { 0%{ transform: translate(0,0) } 50%{ transform: translate(-70vw,26px) } 100%{ transform: translate(-150vw,0) } }
+@keyframes fly2 { 0%{ transform: translate(0,0) } 50%{ transform: translate(-66vw,-22px) } 100%{ transform: translate(-150vw,0) } }
+@keyframes fly3 { 0%{ transform: translate(0,0) } 50%{ transform: translate(-64vw,18px) } 100%{ transform: translate(-150vw,0) } }
+@keyframes drake { from { background-position-x: 0%; } to { background-position-x: 100%; } }
+@media (prefers-reduced-motion: reduce){
+  .dragon{ animation:none !important; }
+  .dragon.d1{ left:auto; right:16%; }
+  .dragon.d2{ left:20%; }
+  .dragon.d3{ left:auto; right:6%; }
+}

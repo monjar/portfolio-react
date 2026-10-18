@@ -1,0 +1,18 @@
+.arcane-sky {
+  position: absolute; inset: 0; z-index: var(--z-sky);
+  overflow: hidden; pointer-events: none;
+  /* melt into the page at the bottom edge */
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 72%, transparent 100%);
+          mask-image: linear-gradient(180deg, #000 0%, #000 72%, transparent 100%);
+}
+.arcane-sky__fallback {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(60% 50% at 50% 42%, color-mix(in oklab, var(--gold-lt) 35%, transparent), transparent 70%),
+    linear-gradient(180deg, var(--sky-1) 0%, var(--sky-2) 60%, var(--parch) 100%);
+}
+.arcane-sky__canvas {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  opacity: 0; transition: opacity 1.2s var(--ease);
+}
+.arcane-sky__canvas.on { opacity: 1; }
