@@ -1,0 +1,14 @@
+.archive { max-width: var(--maxw); margin: 0 auto; }
+.archive__list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(24px, 4vw, 56px); }
+.archive__row {
+  display: grid; grid-template-columns: 1fr auto 16px; grid-template-rows: auto auto; column-gap: 14px; row-gap: 2px; align-items: center;
+  padding: 16px 6px; border-bottom: 1px solid var(--line-2);
+  transition: background .3s, padding-left .35s var(--ease);
+}
+.archive__row:hover { background: color-mix(in oklab, var(--parch-2) 60%, transparent); padding-left: 14px; }
+.archive__title { font-family: var(--display); font-weight: 700; font-size: 17px; color: var(--ink); grid-column: 1; transition: color .3s; }
+.archive__row:hover .archive__title { color: var(--crimson); }
+.archive__tag { grid-column: 1; grid-row: 2; font-style: italic; font-size: 16px; color: var(--ink-2); }
+.archive__row .stack-chips { grid-column: 2; grid-row: 1 / span 2; }
+.archive__row > svg { grid-column: 3; grid-row: 1 / span 2; width: 16px; height: 16px; color: var(--gold-text); }
+@media (max-width: 760px) { .archive__list { grid-template-columns: 1fr; } }

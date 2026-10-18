@@ -1,0 +1,48 @@
+.pcard-wrap { transform-style: preserve-3d; will-change: transform; }
+.pcard {
+  position: relative; display: flex; flex-direction: column; height: 100%;
+  border: 1px solid var(--gold);
+  background: color-mix(in oklab, var(--parch-2) 60%, var(--parch));
+  overflow: hidden; isolation: isolate;
+  transition: box-shadow .45s var(--ease), border-color .45s var(--ease), transform .45s var(--ease);
+}
+.pcard::before { content:""; position:absolute; inset:6px; border:1px solid var(--line-2); pointer-events:none; z-index: 3; transition: border-color .4s; }
+.pcard.is-hover { box-shadow: var(--card-shadow), 0 0 0 1px var(--accent), 0 0 30px -6px color-mix(in oklab, var(--accent) 60%, transparent); }
+.pcard.is-hover::before { border-color: color-mix(in oklab, var(--gold-2) 70%, transparent); }
+.pcard__glow {
+  position: absolute; inset: 0; pointer-events: none; z-index: 2; opacity: 0;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), color-mix(in oklab, var(--gold-lt) 32%, transparent), transparent 45%);
+  mix-blend-mode: soft-light; transition: opacity .4s var(--ease);
+}
+[data-palette="forest"] .pcard__glow { mix-blend-mode: screen; background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), color-mix(in oklab, var(--gold-2) 18%, transparent), transparent 45%); }
+.pcard.is-hover .pcard__glow { opacity: 1; }
+
+.pcard__art { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--parch-3); border-bottom: 1px solid var(--gold); }
+.pcard__art > .media, .pcard__art > .sigil { position: absolute; inset: 0; width: 100%; height: 100%; }
+.pcard__art img.media { object-fit: cover; transition: transform 1.2s var(--ease), filter .6s; filter: saturate(.92) sepia(.08); }
+.pcard.is-hover .pcard__art img.media { transform: scale(1.05); filter: none; }
+.pcard__art--logo { background: radial-gradient(60% 70% at 50% 50%, var(--parch), var(--parch-3)); }
+.pcard__art--logo img.media { object-fit: contain !important; padding: 12% 22%; background: none; filter: none; }
+.pcard__badge, .pcard__status {
+  position: absolute; z-index: 1; top: 12px;
+  font-family: var(--display); font-weight: 600; font-size: 10px; letter-spacing: .2em; text-transform: uppercase;
+  padding: 5px 10px; background: color-mix(in oklab, var(--parch) 86%, transparent); color: var(--ink);
+  border: 1px solid var(--gold); backdrop-filter: blur(4px);
+}
+.pcard__badge { left: 12px; color: var(--crimson); }
+.pcard__status { right: 12px; }
+
+.pcard__body { padding: clamp(20px, 2.4vw, 28px); display: flex; flex-direction: column; flex: 1; }
+.pcard__head { display: flex; align-items: baseline; gap: 12px; }
+.pcard__num { font-family: var(--decor); font-weight: 900; font-size: 26px; color: var(--gold-2); line-height: 1; opacity: .8; }
+.pcard__craft { font-family: var(--display); font-weight: 500; font-size: 10.5px; letter-spacing: .26em; text-transform: uppercase; color: var(--crimson); }
+.pcard h3 { font-family: var(--display); font-weight: 700; font-size: clamp(22px, 2.2vw, 28px); margin: 10px 0 6px; color: var(--ink); transition: color .3s; }
+.pcard.is-hover h3 { color: var(--crimson); }
+.pcard p { font-family: var(--body); font-style: italic; font-size: 17.5px; line-height: 1.45; color: var(--ink-2); margin: 0 0 18px; }
+.pcard__foot { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.pcard__go {
+  width: 36px; height: 36px; flex: none; display: grid; place-items: center; border: 1px solid var(--gold); border-radius: 50%;
+  color: var(--ink); transition: background .3s, color .3s, transform .4s var(--ease-unfurl);
+}
+.pcard__go svg { width: 16px; height: 16px; }
+.pcard.is-hover .pcard__go { background: var(--crimson); color: var(--gold-lt); border-color: var(--crimson); transform: translateX(4px); }

@@ -1,0 +1,7 @@
+.lost { position: relative; min-height: 100svh; display: grid; place-items: center; overflow: hidden; text-align: center; }
+.lost__inner { position: relative; z-index: 3; padding-top: 80px; }
+.lost h1 { font-family: var(--display); font-weight: 900; font-size: clamp(44px, 8vw, 110px); line-height: 1; margin: 22px 0; color: var(--ink); }
+.lost p { font-style: italic; font-size: clamp(19px, 1.7vw, 23px); color: var(--ink-2); max-width: 46ch; margin: 0 auto; }
+.lost__cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 36px; }
+.lost__dragon { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.lost__dragon .dragon { animation: none; left: auto; right: 12%; top: 18%; width: 160px; transform: rotate(-6deg); }

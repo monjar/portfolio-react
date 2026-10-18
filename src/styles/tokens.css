@@ -1,0 +1,95 @@
+/* ════════════════════════════════════════════════════════════════════════
+   THE CODEX OF MONJAR · design tokens
+   Illuminated manuscript meets castle keep. Parchment, gold, crimson, stone,
+   and now a little living fire.
+   light = royal (parchment) · dark = forest (Emerald Wood)
+   ════════════════════════════════════════════════════════════════════════ */
+@layer tokens {
+  :root {
+    --parch:   #ede0bf;
+    --parch-2: #e4d3a6;
+    --parch-3: #d8c38c;
+    --ink:     #2b1c0d;
+    --ink-2:   #5c4422;
+    --ink-3:   #7d6239;
+    --gold:    #9a6f12;
+    --gold-2:  #c6a14a;
+    --gold-lt: #e6cf8d;
+    --gold-text: #7f5a0c;          /* gold dark enough for small text on parchment */
+    --crimson: #7c1818;
+    --crimson-2:#9c2626;
+    --stone:   #8d8170;
+    --stone-2: #6c6151;
+    --stone-3: #51483b;
+    --line:    rgba(60,40,15,0.30);
+    --line-2:  rgba(60,40,15,0.14);
+    --sky-1:   #d9c79a;
+    --sky-2:   #e9dcb6;
+    --dragon-ink: var(--stone-3);
+    --dragon-op:  0.30;
+
+    /* living fire */
+    --ember-hot:  #ffcf6b;
+    --ember-mid:  #f08a24;
+    --ember-cool: #c6a14a;
+    --arcane:     #7c1818;
+    --glow-gold:  0 0 .5rem rgb(230 207 141 / .55), 0 0 2rem rgb(198 161 74 / .25);
+    --glow-crimson: 0 0 1.5rem rgb(124 24 24 / .35);
+    --card-shadow: 0 24px 60px -18px rgba(40,25,8,.38);
+
+    /* three-stop palette the hero shader reads (deep → mid → light) */
+    --sky-0: #b98c4a;
+    --sky-mid: #d7b773;
+    --sky-hi: #f3e6c4;
+
+    --damask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='58'%20height='58'%3E%3Cpath%20d='M29%202L56%2029L29%2056L2%2029Z'%20fill='none'%20stroke='%23000'%20stroke-width='1'/%3E%3Ccircle%20cx='29'%20cy='29'%20r='2.6'%20fill='%23000'/%3E%3Cpath%20d='M29%2018a11%2011%200%200%200%2011%2011a11%2011%200%200%200-11%2011a11%2011%200%200%200-11-11a11%2011%200%200%200%2011-11z'%20fill='none'%20stroke='%23000'%20stroke-width='0.8'/%3E%3Ccircle%20cx='29'%20cy='2'%20r='1.6'%20fill='%23000'/%3E%3Ccircle%20cx='29'%20cy='56'%20r='1.6'%20fill='%23000'/%3E%3Ccircle%20cx='2'%20cy='29'%20r='1.6'%20fill='%23000'/%3E%3Ccircle%20cx='56'%20cy='29'%20r='1.6'%20fill='%23000'/%3E%3C/svg%3E");
+    --ashlar: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='120'%20height='60'%3E%3Cg%20stroke='%23000'%20stroke-opacity='0.30'%20stroke-width='1.4'%3E%3Cpath%20d='M0%2020H120M0%2040H120M40%200V20M80%200V20M20%2020V40M60%2020V40M100%2020V40M40%2040V60M80%2040V60'/%3E%3C/g%3E%3Cg%20stroke='%23fff'%20stroke-opacity='0.09'%20stroke-width='1'%3E%3Cpath%20d='M0%2021.6H120M0%2041.6H120M40.6%200V19M80.6%200V19M20.6%2020V39M60.6%2020V39M100.6%2020V39'/%3E%3C/g%3E%3C/svg%3E");
+
+    --display: 'Cinzel', serif;
+    --decor:   'Cinzel Decorative', 'Cinzel', serif;
+    --body:    'EB Garamond', Georgia, serif;
+
+    --pad:  clamp(20px, 5vw, 76px);
+    --maxw: 1180px;
+    --ease: cubic-bezier(.2,.7,.2,1);
+    --ease-quill:  cubic-bezier(.65,.05,.36,1);
+    --ease-unfurl: cubic-bezier(.22,1,.36,1);
+    --dur-1: 120ms;
+    --dur-2: 260ms;
+    --dur-3: 520ms;
+    --dur-page: 700ms;
+    --dur-ink: 1400ms;
+
+    --z-sky: 0;
+    --z-dragons: 1;
+    --z-content: 5;
+    --z-rampart: 55;
+    --z-nav: 60;
+    --z-drawer: 70;
+    --z-overlay: 80;
+    --z-cursor: 90;
+  }
+
+  [data-palette="forest"] {          /* Emerald Wood — moss & oxblood (dark) */
+    --parch:#0f1410; --parch-2:#16201a; --parch-3:#1f2b22;
+    --ink:#ecefe0; --ink-2:#b6c3a8; --ink-3:#8d9b7f;
+    --gold:#b08a2e; --gold-2:#d8b85a; --gold-lt:#ecdc9e;
+    --gold-text:#d8b85a;
+    --crimson:#c25555; --crimson-2:#d36a6a;
+    --stone:#46523f; --stone-2:#2c362a; --stone-3:#1d251d;
+    --line:rgba(200,210,160,0.22); --line-2:rgba(200,210,160,0.12);
+    --sky-1:#0c130c; --sky-2:#16201a;
+    --dragon-ink:var(--stone); --dragon-op:0.6;
+
+    --ember-hot:#ffe08a; --ember-mid:#e7a83c; --ember-cool:#7fd3b0;
+    --arcane:#4fbf9f;
+    --glow-gold: 0 0 .6rem rgb(236 220 158 / .45), 0 0 2.4rem rgb(216 184 90 / .22);
+    --glow-crimson: 0 0 1.5rem rgb(194 85 85 / .35);
+    --card-shadow: 0 24px 60px -18px rgba(0,0,0,.7);
+    --sky-0:#050a07; --sky-mid:#123526; --sky-hi:#3d7d63;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :root { --dur-1:0ms; --dur-2:0ms; --dur-3:0ms; --dur-ink:0ms; --dur-page:150ms; }
+  }
+}

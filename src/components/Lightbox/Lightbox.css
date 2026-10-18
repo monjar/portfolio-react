@@ -1,0 +1,28 @@
+.lightbox {
+  width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0;
+  background: transparent; color: var(--ink);
+}
+.lightbox::backdrop { background: color-mix(in oklab, #120b04 88%, transparent); backdrop-filter: blur(6px); }
+.lightbox__fig { margin: 0; height: 100%; display: grid; grid-template-rows: 1fr auto; padding: 64px 72px 24px; gap: 14px; }
+.lightbox__stage { position: relative; min-height: 0; display: grid; place-items: center; }
+.lightbox__media { max-width: 100%; max-height: 100%; width: auto !important; height: 100% !important; background: transparent !important; object-fit: contain; }
+.lightbox__stage .media--video { width: 100% !important; height: 100%; aspect-ratio: auto !important; }
+.lightbox figcaption {
+  text-align: center; color: #efe3c4; font-style: italic; font-size: 18px;
+  display: flex; gap: 14px; justify-content: center; align-items: baseline;
+}
+.lightbox__count { font-family: var(--display); font-style: normal; font-size: 11px; letter-spacing: .2em; color: #c6a14a; }
+.lightbox__btn, .lightbox__close {
+  position: fixed; border: 1px solid #c6a14a; background: rgba(20,12,4,.6); color: #efe3c4; cursor: pointer;
+  width: 48px; height: 48px; display: grid; place-items: center; transition: background .2s, color .2s;
+}
+.lightbox__btn:hover, .lightbox__close:hover { background: #7c1818; }
+.lightbox__btn svg { width: 22px; height: 22px; }
+.lightbox__prev { left: 14px; top: 50%; translate: 0 -50%; }
+.lightbox__prev svg { rotate: 180deg; }
+.lightbox__next { right: 14px; top: 50%; translate: 0 -50%; }
+.lightbox__close { top: 14px; right: 14px; font-size: 18px; }
+@media (max-width: 640px) {
+  .lightbox__fig { padding: 64px 12px 20px; }
+  .lightbox__prev, .lightbox__next { top: auto; bottom: 14px; translate: none; }
+}

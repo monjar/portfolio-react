@@ -1,0 +1,14 @@
+.stack-chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.stack-chips li {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--display); font-weight: 500; font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--ink-2); border: 1px solid var(--line); padding: 6px 11px;
+  background: color-mix(in oklab, var(--parch) 60%, transparent);
+}
+.stack-chips li svg { width: 14px; height: 14px; color: var(--gold-text); }
+.stack-chips__rune { font-size: 13px; color: var(--gold-text); line-height: 1; }
+.stack-chips--compact { gap: 12px; }
+.stack-chips--compact li { border: 0; padding: 0; background: none; color: var(--ink-3); }
+.stack-chips--compact li svg { width: 19px; height: 19px; color: currentColor; }
+.stack-chips--compact .stack-chips__rune { font-size: 18px; color: currentColor; }
+.stack-chips__more { font-size: 11px !important; }

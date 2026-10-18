@@ -1,52 +1,38 @@
 {
   "name": "portfolio",
-  "version": "0.1.0",
-  "homepage": "https://monjar.dev",
+  "version": "2.0.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^12.0.0",
-    "@testing-library/user-event": "^13.2.1",
-    "@types/jest": "^27.0.1",
-    "@types/node": "^16.7.13",
-    "@types/react": "^17.0.20",
-    "@types/react-dom": "^17.0.9",
-    "@types/react-scroll": "^1.8.3",
-    "gh-pages": "^5.0.0",
-    "marked": "^12.0.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-icons": "^5.0.1",
-    "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.0",
-    "react-scroll": "^1.8.4",
-    "react-use-scroll-direction": "^0.1.0",
-    "typescript": "^4.4.2",
-    "web-vitals": "^2.1.0"
+  "type": "module",
+  "engines": {
+    "node": ">=20.19"
   },
   "scripts": {
-    "deploy": "react-scripts build && xcopy  ./build ../monjar.github.io/ && cd ../monjar.github.io && git add . && git commit -m \"Updated page\" && git push origin master && echo 'Finished Deploying to github pages'",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "serve:gh": "http-server build -p 5050 -c-1",
+    "media": "bash scripts/media/build-all.sh"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "dependencies": {
+    "@fontsource/cinzel": "^5.3.0",
+    "@fontsource/cinzel-decorative": "^5.3.0",
+    "@fontsource/eb-garamond": "^5.3.0",
+    "marked": "^12.0.2",
+    "motion": "^12.43.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-icons": "^5.7.0",
+    "react-router": "^7.18.4"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "http-server": "^14.1.1",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.4",
+    "vitest": "^5.0.5"
   }
 }

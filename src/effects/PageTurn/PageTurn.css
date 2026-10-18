@@ -1,0 +1,23 @@
+.page { outline: none; }
+.page-leaf {
+  position: fixed; inset: 0; z-index: var(--z-overlay);
+  transform-origin: 0% 50%;
+  transform-style: preserve-3d;
+  opacity: 0;
+  pointer-events: none;
+  backface-visibility: hidden;
+  display: grid; place-items: center;
+  background:
+    radial-gradient(120% 90% at 30% 50%, transparent 40%, rgba(40,25,8,.22) 100%),
+    var(--damask) center / 58px 58px,
+    var(--parch-2);
+  background-blend-mode: normal, soft-light, normal;
+  border-left: 3px solid var(--gold);
+  box-shadow: 0 0 60px rgba(20,12,2,.45), inset 0 0 0 9px var(--parch-2), inset 0 0 0 10px var(--gold);
+}
+.page-leaf__shade {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(40,25,8,.25), transparent 18%, transparent 80%, rgba(255,240,200,.18));
+}
+.page-leaf .crest { width: 74px; height: 88px; color: var(--crimson); opacity: .85; }
+.page-leaf .crest .tash { fill: var(--gold-lt); }
