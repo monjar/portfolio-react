@@ -1,0 +1,12 @@
+.works-group { max-width: var(--maxw); margin: 0 auto clamp(48px, 7vw, 90px); }
+.works-group__title {
+  display: flex; align-items: center; gap: 16px; margin: 0 0 clamp(20px, 3vw, 30px);
+  font-family: var(--display); font-weight: 500; font-size: 12px; letter-spacing: .3em; text-transform: uppercase; color: var(--ink-3);
+}
+.works-group__title span { color: var(--crimson); font-weight: 700; }
+.works-group__title::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--gold), transparent); }
+.works { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 3vw, 32px); perspective: 1400px; }
+.works--elder { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.works--elder .pcard p { font-size: 16.5px; }
+@media (max-width: 1020px) { .works--elder { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 720px) { .works, .works--elder { grid-template-columns: 1fr; } }

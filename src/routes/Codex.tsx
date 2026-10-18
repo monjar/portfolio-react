@@ -1,20 +1,17 @@
-import { useEffect } from "react";
 import { Link } from "react-router";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer/Footer";
 import { usePosts } from "../lib/usePosts";
+import { useDocumentMeta } from "../lib/useDocumentMeta";
 import { useReveal } from "../lib/useReveal";
-
-const ROMAN = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
+import { roman } from "../lib/roman";
+import "./codex.css";
 
 const Codex = () => {
   const posts = usePosts() ?? [];
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    document.title = "The Codex of Monjar";
-  }, []);
+  useDocumentMeta("The Codex", "Notes from the forge: writings on robots, renderers and realms by Amirali Monjar.");
 
-  useReveal([posts]);
+  useReveal([posts.length]);
 
   return (
     <main className="view codex-view">
@@ -40,7 +37,7 @@ const Codex = () => {
               className="codex-card reveal"
               to={`/blog/${p.slug}`}
             >
-              <div className="num">{ROMAN[i + 1] || i + 1}</div>
+              <div className="num">{roman(i + 1)}</div>
               <div>
                 <span className="when">
                   {p.dateLabel} · {p.minutes} min

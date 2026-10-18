@@ -1,0 +1,26 @@
+.chronicle { max-width: 780px; margin: 0 auto; position: relative; --rail: 158px; }
+.chronicle::before { content:""; position:absolute; left: var(--rail); top: 6px; bottom: 6px; width:1px; background: linear-gradient(180deg, transparent, var(--line), transparent); }
+.chronicle__fill {
+  position: absolute; left: calc(var(--rail) - 1px); top: 6px; bottom: 6px; width: 3px;
+  background: linear-gradient(180deg, var(--gold-lt), var(--gold-2) 40%, var(--crimson));
+  transform-origin: top; box-shadow: 0 0 10px var(--gold-2); border-radius: 2px;
+}
+.chron-row { display:grid; grid-template-columns: var(--rail) 1fr; gap: clamp(24px,3.4vw,44px); padding: clamp(16px,2.4vw,26px) 0; position: relative; }
+.chron-row .when { font-family: var(--display); font-weight:600; font-size: 13px; letter-spacing:.12em; text-transform: uppercase; color: var(--crimson); text-align: right; padding-top: 4px; padding-right: 16px; white-space: nowrap; }
+.chron-row .what { position: relative; padding-left: 30px; }
+.chron-row .what::before {
+  content:""; position:absolute; left: -8px; top: 9px; width: 11px; height: 11px; background: var(--gold-2); border:1px solid var(--gold); transform: rotate(45deg);
+  transition: box-shadow .6s var(--ease), background .6s;
+}
+.chron-row.in .what::before { box-shadow: 0 0 0 4px color-mix(in oklab, var(--gold-2) 25%, transparent), 0 0 14px var(--gold-2); }
+.chron-row .what h4 { font-family: var(--display); font-weight:700; font-size: clamp(19px,2vw,25px); margin:0 0 4px; color: var(--ink); }
+.chron-row .what h4 span { color: var(--ink-3); font-weight:400; font-style:italic; font-family: var(--body); }
+.chron-row .what p { font-family: var(--body); font-size: 18px; color: var(--ink-2); margin:0; }
+@media (max-width:680px){
+  .chronicle { --rail: 7px; }
+  .chron-row{ grid-template-columns:1fr; gap:6px; padding: 18px 0 18px 32px; }
+  .chron-row .when{ text-align:left; padding:0; }
+  .chron-row .what{ padding-left:0; }
+  .chron-row .what::before{ display:none; }
+  .chron-row::before{ content:""; position:absolute; left:1px; top:22px; width:11px; height:11px; background:var(--gold-2); border:1px solid var(--gold); transform:rotate(45deg); }
+}

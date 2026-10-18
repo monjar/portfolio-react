@@ -1,0 +1,3 @@
+.foot { position: relative; z-index: var(--z-content); padding: 28px var(--pad); display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; border-top:1px solid var(--gold); }
+.foot span { font-family: var(--display); font-size: 11px; letter-spacing:.18em; text-transform: uppercase; color: var(--ink-3); }
+.foot a:hover { color: var(--crimson); }

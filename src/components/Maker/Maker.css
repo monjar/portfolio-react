@@ -1,0 +1,13 @@
+.scroll-frame {
+  max-width: 760px; margin: 0 auto; padding: clamp(34px,5vw,64px) clamp(28px,5vw,72px);
+  background: color-mix(in oklab, var(--parch-2) 60%, transparent);
+}
+.about-text { font-family: var(--body); font-size: clamp(19px,1.6vw,23px); line-height: 1.66; color: var(--ink-2); }
+.about-text p { margin: 0 0 1.1em; }
+.about-text p:last-child { margin-bottom: 0; }
+.about-text .dropcap::first-letter {
+  font-family: var(--decor); font-weight: 900; font-size: 4.4em; line-height: .76;
+  float: left; padding: 8px 14px 0 0; color: var(--crimson);
+  text-shadow: 2px 2px 0 var(--gold-lt);
+}
+[data-palette="forest"] .about-text .dropcap::first-letter { text-shadow: 0 0 18px color-mix(in oklab, var(--crimson) 50%, transparent); }

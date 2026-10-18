@@ -5,8 +5,6 @@
    filename to public/posts/manifest.json.
    ────────────────────────────────────────────────────────────────────────── */
 
-import { marked } from "marked";
-
 export interface Post {
   slug: string;
   file: string;
@@ -99,7 +97,8 @@ async function fetchPosts(): Promise<Post[]> {
   return entries;
 }
 
-export function renderMarkdown(body: string): string {
-  marked.setOptions({ breaks: false, gfm: true });
-  return marked.parse(body) as string;
+/* marked is loaded on demand so only the reading view pays for it. */
+export async function renderMarkdown(body: string): Promise<string> {
+  const { marked } = await import("marked");
+  return marked.parse(body, { breaks: false, gfm: true, async: false }) as string;
 }

@@ -1,0 +1,10 @@
+.scrolls { display:flex; flex-direction:column; max-width: 860px; margin: 0 auto; }
+.scroll-row { display:grid; grid-template-columns: 1fr auto; gap: 24px; align-items: baseline; padding: clamp(20px,2.6vw,30px) 4px; border-bottom: 1px solid var(--line-2); transition: padding-left .4s var(--ease), background .4s; }
+.scroll-row:first-child { border-top: 1px solid var(--line-2); }
+.scroll-row:hover { padding-left: 18px; background: color-mix(in oklab, var(--parch-2) 40%, transparent); }
+.scroll-row h4 { font-family: var(--display); font-weight:700; font-size: clamp(20px,2.2vw,28px); margin:0 0 6px; color: var(--ink); transition: color .3s; }
+.scroll-row:hover h4 { color: var(--crimson); }
+.scroll-row p { font-family: var(--body); font-style: italic; font-size: 17px; color: var(--ink-2); margin:0; max-width: 60ch; }
+.scroll-row .when { font-family: var(--display); font-size: 12px; letter-spacing:.14em; text-transform:uppercase; color: var(--ink-3); white-space: nowrap; padding-top:5px; }
+.center-cta { text-align:center; margin-top: clamp(36px,5vw,54px); }
+@media (max-width: 560px) { .scroll-row { grid-template-columns: 1fr; gap: 6px; } }

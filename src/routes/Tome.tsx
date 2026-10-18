@@ -1,30 +1,30 @@
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer/Footer";
 import { renderMarkdown } from "../lib/blog";
 import { usePosts } from "../lib/usePosts";
+import { useDocumentMeta } from "../lib/useDocumentMeta";
+import "./codex.css";
 
 const Tome = () => {
   const { slug } = useParams<{ slug: string }>();
   const posts = usePosts();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [slug]);
 
   const post = useMemo(
     () => posts?.find((p) => p.slug === slug),
     [posts, slug]
   );
 
-  useEffect(() => {
-    if (post) document.title = `${post.title} · The Codex of Monjar`;
-  }, [post]);
+  useDocumentMeta(post?.title, post?.excerpt);
 
-  const html = useMemo(
-    () => (post ? renderMarkdown(post.body) : ""),
-    [post]
-  );
+  const [html, setHtml] = useState("");
+  useEffect(() => {
+    let live = true;
+    if (post) renderMarkdown(post.body).then((h) => live && setHtml(h));
+    return () => {
+      live = false;
+    };
+  }, [post]);
 
   return (
     <main className="view codex-view">

@@ -1,0 +1,32 @@
+.mochiro-device {
+  position: relative; display: block; width: 100%; aspect-ratio: 4 / 3;
+  padding: 14px; border: 0; cursor: pointer;
+  background: linear-gradient(160deg, #2a2c30, #121315);
+  border-radius: 28px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.12),
+    inset 0 -2px 0 rgba(0,0,0,.6),
+    0 30px 70px -20px rgba(0,0,0,.6),
+    0 0 0 1px #3a3d42;
+}
+.mochiro-device__screen {
+  position: relative; display: block; width: 100%; height: 100%;
+  background: radial-gradient(80% 80% at 50% 40%, #1d1f22, #101113);
+  border-radius: 18px; overflow: hidden;
+  box-shadow: inset 0 0 40px rgba(0,229,222,.08);
+}
+.mochiro-device__fallback {
+  position: absolute; inset: 0; margin: auto; width: 46%; height: 26%;
+  background:
+    radial-gradient(closest-side, #00e5de 92%, transparent) 0 0 / 36% 100% no-repeat,
+    radial-gradient(closest-side, #00e5de 92%, transparent) 100% 0 / 36% 100% no-repeat;
+  filter: drop-shadow(0 0 12px #00e5de);
+  opacity: .9;
+}
+.mochiro-device__hint {
+  position: absolute; bottom: -30px; left: 0; right: 0; text-align: center;
+  font-family: var(--display); font-size: 10.5px; letter-spacing: .3em; text-transform: uppercase;
+  color: var(--ink-3); transition: color .3s;
+}
+.mochiro-device:hover .mochiro-device__hint { color: #00b8b2; }
+.mochiro-device:focus-visible { outline: 2px solid #00e5de; outline-offset: 6px; }

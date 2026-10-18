@@ -1,35 +1,14 @@
 import { ReactNode } from "react";
-import { IconType } from "react-icons";
-import { DiJava, DiNodejs, DiPython } from "react-icons/di";
-import { FaMeta } from "react-icons/fa6";
-import {
-  SiCplusplus,
-  SiDocker,
-  SiGoland,
-  SiKeras,
-  SiLua,
-  SiMapbox,
-  SiNumpy,
-  SiOpencv,
-  SiPython,
-  SiSharp,
-  SiSpringboot,
-  SiTensorflow,
-  SiUnity,
-} from "react-icons/si";
-import { TbBrandOpenai } from "react-icons/tb";
-
-const ICON = "1.35em";
-
-const icon = (C: IconType): ReactNode => <C size={ICON} />;
-
 /* ── Hero ──────────────────────────────────────────────────────────────── */
 export const hero = {
   eyebrow: "Anno Domini MMXXVI · London",
   small: "Hither comes",
   firstName: "Amirali",
   lastName: "Monjar",
+  lede: "Artificer of automata and summoner of bugs, and a wizard of games. Nerd of the north and first of his name (to have played WOW for 45 hours straight in 2012)",
 };
+
+export const cv = "/pdfs/Amirali_Monjar_Game_Dev.pdf";
 
 /* ── The Maker (illuminated about) — real story, fantasy voice ─────────── */
 export const makerParagraphs: ReactNode[] = [
@@ -54,121 +33,6 @@ export const makerParagraphs: ReactNode[] = [
   </>,
 ];
 
-/* ── The Works ─────────────────────────────────────────────────────────── */
-export interface Work {
-  num: string;
-  craft: string;
-  title: string;
-  desc: string;
-  link?: string;
-  video?: string;
-  stack?: ReactNode[];
-}
-
-export const works: Work[] = [
-  {
-    num: "I",
-    craft: "Order of the Companion",
-    title: "Mochiro",
-    desc: "A robot companion project with expressive face animations, custom C++ display driver, and AI-powered interactions.",
-    link: "https://mochiro.co.uk/",
-    stack: [icon(SiCplusplus), icon(SiPython), icon(TbBrandOpenai)],
-  },
-  {
-    num: "II",
-    craft: "Order of Rendering",
-    title: "Custom 3D Renderer",
-    desc: "A C++ Vulkan-based renderer built from scratch with full PBR pipeline, including Cook-Torrance BRDF, normal mapping, and advanced lighting models. Features frustum culling and optimized render loops.",
-    stack: [icon(SiCplusplus)],
-  },
-  {
-    num: "III",
-    craft: "Order of War",
-    title: "Raidfield 2",
-    desc: "An MMO third-person shooter where players clash across a WWII-inspired field and seize objectives. Forged within Alphatik inc.",
-    link: "https://play.google.com/store/apps/details?id=com.alphatikinc.raidfield2&hl=en&gl=US",
-    stack: [icon(SiUnity), icon(SiSharp)],
-  },
-  {
-    num: "IV",
-    craft: "Order of the Green Baize",
-    title: "Super Billiard",
-    desc: "A multiplayer pool game for the Android realm, a Persian rendering of 8-Ball Pool, raised within Cafe Bazaar.",
-    link: "https://cafebazaar.ir/app/ir.cafebazistudio.eightball",
-    stack: [icon(SiUnity), icon(SiLua), icon(SiGoland), icon(SiSharp)],
-  },
-  {
-    num: "V",
-    craft: "Order of Shadows",
-    title: "Cubic Dreams",
-    desc: "An indie puzzle game made in Unity. You guide a spirit lost in a puzzled world, lighting the way to emerge victorious from the dark.",
-    link: "https://github.com/monjar/Cubic-Dreams",
-    stack: [icon(SiUnity), icon(SiSharp)],
-  },
-  {
-    num: "VI",
-    craft: "Order of Sight",
-    title: "AnimateLy",
-    desc: "A desktop tool for sensorless motion capture from a single camera. An AlexNet-based network turns video into animation for a humanoid, exportable to Unity, Blender and Unreal.",
-    link: "https://github.com/monjar/AnimateLy",
-    stack: [
-      icon(DiPython),
-      icon(SiTensorflow),
-      icon(SiNumpy),
-      icon(SiOpencv),
-      icon(SiCplusplus),
-    ],
-  },
-  {
-    num: "VII",
-    craft: "Order of Sorcery",
-    title: "Mage Hands",
-    desc: "A VR game in which you are a wizard, casting spells through the gestures of your own hands.",
-    video: "https://www.youtube.com/embed/-PEmQkcHclY?si=u80p_dP6rpjUyVK6",
-    stack: [icon(SiUnity), icon(FaMeta)],
-  },
-  {
-    num: "VIII",
-    craft: "Order of the Muse",
-    title: "Sentient Strokes",
-    desc: "A game where you manage a gallery, but the gallery itself is sentient and speaks to you. Bid it create art, then watch the critics gather to judge.",
-    video: "https://www.youtube.com/embed/3fiSZIrx-Pc?si=gV2wnzgP8QPJF4IO",
-    stack: [icon(SiUnity), icon(TbBrandOpenai)],
-  },
-  {
-    num: "IX",
-    craft: "Order of Song",
-    title: "MelodyMuse",
-    desc: "A VR prototype of a wearable that lets you conjure music in real time with the aid of machine intelligence.",
-    video: "https://www.youtube.com/embed/JOXD_-y0c1I?si=dhcAt-gxEbqCYpld",
-    stack: [icon(SiUnity), icon(TbBrandOpenai), icon(SiPython), icon(SiKeras)],
-  },
-  {
-    num: "X",
-    craft: "Order of Realms",
-    title: "Enchanted Realms",
-    desc: "A VR prototype weaving real-time worldcraft with mapping and machine intelligence, a realm that answers to your hand.",
-    video: "https://www.youtube.com/embed/jbacmKkosa4?si=WmUQaC56lNnfuMCS",
-    stack: [
-      icon(SiUnity),
-      icon(FaMeta),
-      icon(SiMapbox),
-      icon(TbBrandOpenai),
-      icon(SiPython),
-      icon(SiKeras),
-      icon(SiCplusplus),
-    ],
-  },
-  {
-    num: "XI",
-    craft: "Order of the Scriptorium",
-    title: "Rahnema College",
-    desc: "An educational keep of courses and videos for Persian-speaking learners, with registration, classes, lectures and assignments, in the manner of Coursera.",
-    link: "https://rahnemacollege.com/",
-    stack: [icon(DiJava), icon(SiSpringboot), icon(DiNodejs), icon(SiDocker)],
-  },
-];
-
 /* ── The Chronicle (timeline — real roles & study) ─────────────────────── */
 export interface ChronEntry {
   when: string;
@@ -178,6 +42,12 @@ export interface ChronEntry {
 }
 
 export const chronicle: ChronEntry[] = [
+  {
+    when: "2025 - Present",
+    title: "Co-founder & Engineer",
+    place: "· Mochiro",
+    desc: "Giving AI a little body, starting with the mind. I build the companion app, its server, the website and the release pipeline.",
+  },
   {
     when: "2024 - Present",
     title: "Software Specialist",
