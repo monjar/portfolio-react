@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router";
 import { BookGlyph, Crest, MoonIcon, SunIcon } from "./icons";
 import { useTheme } from "../lib/useTheme";
 

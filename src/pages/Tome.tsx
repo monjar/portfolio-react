@@ -1,19 +1,16 @@
-import { useEffect, useMemo, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useEffect, useMemo } from "react";
+import { Link, useParams } from "react-router";
 import Footer from "../components/Footer";
-import { loadPosts, Post, renderMarkdown } from "../lib/blog";
+import { renderMarkdown } from "../lib/blog";
+import { usePosts } from "../lib/usePosts";
 
 const Tome = () => {
   const { slug } = useParams<{ slug: string }>();
-  const navigate = useNavigate();
-  const [posts, setPosts] = useState<Post[] | null>(null);
+  const posts = usePosts();
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    loadPosts()
-      .then(setPosts)
-      .catch(() => setPosts([]));
-  }, []);
+  }, [slug]);
 
   const post = useMemo(
     () => posts?.find((p) => p.slug === slug),
@@ -37,16 +34,9 @@ const Tome = () => {
             <p className="prose">This scroll has been lost to time.</p>
           ) : (
             <>
-              <a
-                className="back-link"
-                href="#/blog"
-                onClick={(e) => {
-                  e.preventDefault();
-                  navigate("/blog");
-                }}
-              >
+              <Link className="back-link" to="/blog">
                 ← return to the codex
-              </a>
+              </Link>
               <header>
                 <div className="when">
                   {post.dateLabel} · {post.minutes} min
@@ -69,17 +59,7 @@ const Tome = () => {
         </div>
       </article>
       <Footer
-        right={
-          <a
-            href="#/blog"
-            onClick={(e) => {
-              e.preventDefault();
-              navigate("/blog");
-            }}
-          >
-            ← the codex
-          </a>
-        }
+        right={<Link to="/blog">← the codex</Link>}
       />
     </main>
   );

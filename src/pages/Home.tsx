@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router";
 import Hero from "../components/Hero";
 import Maker from "../components/Maker";
 import Works from "../components/Works";

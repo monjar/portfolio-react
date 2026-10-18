@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import { Dragon } from "./icons";
 import { hero } from "../data/content";
 

@@ -1,21 +1,17 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { Link } from "react-router";
 import Footer from "../components/Footer";
-import { loadPosts, Post } from "../lib/blog";
+import { usePosts } from "../lib/usePosts";
 import { useReveal } from "../lib/useReveal";
 
 const ROMAN = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
 
 const Codex = () => {
-  const [posts, setPosts] = useState<Post[]>([]);
-  const navigate = useNavigate();
+  const posts = usePosts() ?? [];
 
   useEffect(() => {
     window.scrollTo(0, 0);
     document.title = "The Codex of Monjar";
-    loadPosts()
-      .then(setPosts)
-      .catch(() => setPosts([]));
   }, []);
 
   useReveal([posts]);
@@ -24,16 +20,9 @@ const Codex = () => {
     <main className="view codex-view">
       <section className="codex-head">
         <div className="wrap">
-          <a
-            className="back-link"
-            href="#/"
-            onClick={(e) => {
-              e.preventDefault();
-              navigate("/");
-            }}
-          >
+          <Link className="back-link" to="/">
             ← return to the keep
-          </a>
+          </Link>
           <div className="eyebrow sole" style={{ justifyContent: "center" }}>
             The Codex
           </div>
@@ -46,14 +35,10 @@ const Codex = () => {
       <div className="wrap">
         <div className="codex-list">
           {posts.map((p, i) => (
-            <a
+            <Link
               key={p.slug}
               className="codex-card reveal"
-              href={`#/blog/${p.slug}`}
-              onClick={(e) => {
-                e.preventDefault();
-                navigate(`/blog/${p.slug}`);
-              }}
+              to={`/blog/${p.slug}`}
             >
               <div className="num">{ROMAN[i + 1] || i + 1}</div>
               <div>
@@ -70,7 +55,7 @@ const Codex = () => {
                   ))}
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

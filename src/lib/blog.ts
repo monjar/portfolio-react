@@ -24,7 +24,7 @@ interface Frontmatter {
   body: string;
 }
 
-const POSTS_BASE = `${process.env.PUBLIC_URL || ""}/posts/`;
+const POSTS_BASE = `${import.meta.env.BASE_URL}posts/`;
 
 function parseFrontmatter(raw: string): Frontmatter {
   const m = raw.match(/^---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/);

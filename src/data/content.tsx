@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import { IconType } from "react-icons";
 import { DiJava, DiNodejs, DiPython } from "react-icons/di";
 import { FaMeta } from "react-icons/fa6";
@@ -10,7 +10,6 @@ import {
   SiLua,
   SiMapbox,
   SiNumpy,
-  SiOpenai,
   SiOpencv,
   SiPython,
   SiSharp,
@@ -18,16 +17,11 @@ import {
   SiTensorflow,
   SiUnity,
 } from "react-icons/si";
+import { TbBrandOpenai } from "react-icons/tb";
 
 const ICON = "1.35em";
 
-/* react-icons 5's IconType returns ReactNode, which @types/react 17 won't
-   accept as a JSX element — render through createElement with a permissive
-   cast so the icons type-check cleanly. */
-const icon = (C: IconType): ReactNode =>
-  React.createElement(C as React.ComponentType<{ size?: string }>, {
-    size: ICON,
-  });
+const icon = (C: IconType): ReactNode => <C size={ICON} />;
 
 /* ── Hero ──────────────────────────────────────────────────────────────── */
 export const hero = {
@@ -78,7 +72,7 @@ export const works: Work[] = [
     title: "Mochiro",
     desc: "A robot companion project with expressive face animations, custom C++ display driver, and AI-powered interactions.",
     link: "https://mochiro.co.uk/",
-    stack: [icon(SiCplusplus), icon(SiPython), icon(SiOpenai)],
+    stack: [icon(SiCplusplus), icon(SiPython), icon(TbBrandOpenai)],
   },
   {
     num: "II",
@@ -139,7 +133,7 @@ export const works: Work[] = [
     title: "Sentient Strokes",
     desc: "A game where you manage a gallery, but the gallery itself is sentient and speaks to you. Bid it create art, then watch the critics gather to judge.",
     video: "https://www.youtube.com/embed/3fiSZIrx-Pc?si=gV2wnzgP8QPJF4IO",
-    stack: [icon(SiUnity), icon(SiOpenai)],
+    stack: [icon(SiUnity), icon(TbBrandOpenai)],
   },
   {
     num: "IX",
@@ -147,7 +141,7 @@ export const works: Work[] = [
     title: "MelodyMuse",
     desc: "A VR prototype of a wearable that lets you conjure music in real time with the aid of machine intelligence.",
     video: "https://www.youtube.com/embed/JOXD_-y0c1I?si=dhcAt-gxEbqCYpld",
-    stack: [icon(SiUnity), icon(SiOpenai), icon(SiPython), icon(SiKeras)],
+    stack: [icon(SiUnity), icon(TbBrandOpenai), icon(SiPython), icon(SiKeras)],
   },
   {
     num: "X",
@@ -159,7 +153,7 @@ export const works: Work[] = [
       icon(SiUnity),
       icon(FaMeta),
       icon(SiMapbox),
-      icon(SiOpenai),
+      icon(TbBrandOpenai),
       icon(SiPython),
       icon(SiKeras),
       icon(SiCplusplus),

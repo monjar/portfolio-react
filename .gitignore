@@ -23,3 +23,7 @@ yarn-error.log*
 
 # raw source frames for the dragon sprite (the built sheet lives in src/assets)
 /assets/
+
+# vite
+/dist
+*.local
