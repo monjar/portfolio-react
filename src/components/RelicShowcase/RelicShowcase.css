@@ -3,38 +3,64 @@
 .relics__stage {
   position: sticky; top: 0; height: 100vh; overflow: hidden;
   display: grid; align-items: center;
-  padding-top: 90px;
+  padding-top: 96px; padding-bottom: 24px;
 }
 .relics__glow {
   position: absolute; inset: 0; pointer-events: none;
-  background: radial-gradient(45% 55% at 70% 55%, color-mix(in oklab, var(--accent, var(--gold-2)) 22%, transparent), transparent 70%);
+  background: radial-gradient(45% 55% at 62% 55%, color-mix(in oklab, var(--accent, var(--gold-2)) 22%, transparent), transparent 70%);
   transition: background 1s var(--ease);
 }
 .relics__grid {
-  display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: clamp(32px, 5vw, 80px); align-items: center; width: 100%;
-  padding-right: calc(var(--pad) + 120px);
+  display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.15fr) auto;
+  gap: clamp(28px, 4vw, 64px); align-items: center; width: 100%;
+  max-width: 1320px;
+}
+
+/* the four text blocks share one grid cell; only the active one shows */
+.relic__texts { display: grid; container-type: inline-size; }
+.relic__text {
+  grid-area: 1 / 1; align-self: center;
+  opacity: 0; visibility: hidden; transform: translateY(26px); filter: blur(6px);
+  transition: opacity .45s var(--ease), transform .55s var(--ease-unfurl), filter .45s var(--ease), visibility 0s linear .55s;
+}
+.relic__text.on {
+  opacity: 1; visibility: visible; transform: none; filter: none;
+  transition-delay: .12s, .12s, .12s, 0s;
 }
 .relic__num { font-family: var(--decor); font-weight: 900; font-size: 54px; line-height: 1; color: var(--gold-2); opacity: .75; }
 .relic__craft {
   font-family: var(--display); font-weight: 600; font-size: 12px; letter-spacing: .3em; text-transform: uppercase;
   color: var(--crimson); margin-top: 12px;
 }
+/* sized to its column: the longest word (--len characters) always fits */
 .relic__title {
-  font-family: var(--display); font-weight: 900; font-size: clamp(32px, min(4.2vw, 6.4vh), 62px); line-height: 1.02;
-  margin: 10px 0 14px; color: var(--ink);
+  font-family: var(--display); font-weight: 900; line-height: 1.02;
+  font-size: clamp(26px, calc(100cqi / (var(--len, 10) * 0.8)), 60px);
+  margin: 10px 0 14px; color: var(--ink); overflow-wrap: break-word;
 }
-.relic__tagline { font-style: italic; font-size: clamp(19px, 1.6vw, 23px); color: var(--ink); margin: 0 0 12px; line-height: 1.45; }
-.relic__summary { color: var(--ink-2); font-size: 17.5px; line-height: 1.6; margin: 0 0 20px; max-width: 54ch; }
+.relic__tagline { font-style: italic; font-size: clamp(18px, 1.5vw, 22px); color: var(--ink); margin: 0 0 12px; line-height: 1.45; }
+.relic__summary { color: var(--ink-2); font-size: 17px; line-height: 1.6; margin: 0 0 18px; max-width: 54ch; }
 .relic__summary a { color: var(--crimson); border-bottom: 1px solid var(--gold); }
-.relic__stats { display: flex; flex-wrap: wrap; gap: 12px clamp(18px, 3vw, 34px); margin: 0 0 20px; }
+.relic__stats { display: flex; flex-wrap: wrap; gap: 12px clamp(18px, 3vw, 34px); margin: 0 0 18px; }
 .relic__stats div { border-left: 1px solid var(--gold); padding-left: 12px; }
 .relic__stats dt { font-family: var(--display); font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-3); }
 .relic__stats dd { margin: 2px 0 0; font-family: var(--decor); font-weight: 700; font-size: 21px; color: var(--ink); white-space: nowrap; }
-.relic__cta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 24px; }
+.relic__cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
 
-.relic__stagebox { position: relative; aspect-ratio: 16 / 11; }
-.relic__mediawrap { position: absolute; inset: 0; display: grid; place-items: center; }
+.relic__stagebox {
+  position: relative; justify-self: center;
+  width: min(100%, calc((100vh - 220px) * 16 / 10));
+  aspect-ratio: 16 / 10;
+}
+.relic__mediawrap {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  clip-path: circle(0% at 50% 50%); opacity: 0; visibility: hidden;
+  transition: clip-path .8s var(--ease-quill), opacity .4s var(--ease), visibility 0s linear .8s;
+}
+.relic__mediawrap.on {
+  clip-path: circle(75% at 50% 50%); opacity: 1; visibility: visible; z-index: 1;
+  transition: clip-path .9s var(--ease-quill), opacity .3s var(--ease), visibility 0s;
+}
 .relic-media {
   position: relative; width: 100%; height: 100%; overflow: hidden;
   border: 1px solid var(--gold);
@@ -56,7 +82,7 @@
 }
 
 .relics__rail {
-  position: absolute; right: var(--pad); top: 50%; translate: 0 -50%;
+  position: relative; align-self: center;
   display: flex; flex-direction: column; gap: 8px; padding-left: 18px;
 }
 .relics__rail::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: var(--line); }
@@ -70,6 +96,11 @@
 .relics__rail-name { font-family: var(--display); font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; max-width: 110px; }
 .relics__rail button.on, .relics__rail button:hover { color: var(--crimson); }
 .relics__rail button.on .relics__rail-num { color: var(--gold-text); }
+/* narrower stages: numerals only */
+@media (max-width: 1180px) {
+  .relics__rail-name { display: none; }
+  .relics__rail button { grid-template-columns: auto; }
+}
 
 /* stacked (mobile / reduced motion) */
 .relics__stack { display: grid; gap: clamp(28px, 6vw, 56px); padding-block: 10px clamp(40px, 6vw, 70px); }
@@ -80,7 +111,7 @@
 .relic-panel__media { position: relative; aspect-ratio: 16 / 10; background: radial-gradient(60% 60% at 50% 50%, color-mix(in oklab, var(--accent) 22%, transparent), transparent); padding: 18px; }
 .relic-panel__media .relic-media { box-shadow: none; }
 .relic-panel__media .relic-media--device .mochiro-device { width: min(78%, 360px); }
-.relic-panel__text { padding: clamp(22px, 5vw, 40px); }
+.relic-panel__text { padding: clamp(22px, 5vw, 40px); container-type: inline-size; }
 @media (min-width: 760px) {
   .relic-panel { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); align-items: center; }
   .relic-panel:nth-child(even) .relic-panel__media { order: 2; }
@@ -91,8 +122,8 @@
 @media (max-height: 940px) {
   .relics__stage .relic__summary { display: none; }
   .relics__stage .relic__num { font-size: 40px; }
-  .relics__stage .relic__cta { margin-top: 18px; }
 }
 @media (max-height: 760px) {
   .relics__stage .relic__stats { display: none; }
+  .relics__stage .relic__cta { margin-top: 14px; }
 }

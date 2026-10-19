@@ -58,6 +58,8 @@ export interface Project {
     cover?: MediaItem;
     hoverVideo?: MediaItem;
     hero?: MediaItem | "mochiro-face";
+    /** highlight clips played in turn on the relic stage and detail hero */
+    reel?: MediaItem[];
     gallery?: MediaItem[];
   };
   sections?: Section[];
@@ -182,6 +184,15 @@ export const projects: Project[] = [
       cover: img("advanced-shaders", "cover.webp", "A black hole's accretion disk seen edge-on, lensed into a ring of light", { aspect: "16/9" }),
       hoverVideo: vid("advanced-shaders", "blackhole", "A Schwarzschild black hole bending starlight", { aspect: "16/9" }),
       hero: vid("advanced-shaders", "blackhole", "A Schwarzschild black hole bending starlight around its accretion disk", { aspect: "16/9" }),
+      reel: [
+        vid("advanced-shaders", "magic", "A molten orb turning into a golden rune sphere in a torch-lit temple", { caption: "07 · Magic materials" }),
+        vid("advanced-shaders", "ocean", "FFT ocean swells and whitecaps around an island", { caption: "01 · FFT ocean" }),
+        vid("advanced-shaders", "clouds", "Ray-marched cumulus clouds over green plains", { caption: "02 · Volumetric clouds" }),
+        vid("advanced-shaders", "watercolour", "A painterly watercolour fly-over of a village", { caption: "03 · Watercolour" }),
+        vid("advanced-shaders", "blackhole", "A black hole bending light around its accretion disk", { caption: "06 · Black hole" }),
+        vid("advanced-shaders", "portals", "Looking through a pair of recursive portals", { caption: "04 · Recursive portals" }),
+        vid("advanced-shaders", "atmosphere", "Climbing through the atmosphere until the planet's limb appears", { caption: "08 · Atmosphere" }),
+      ],
       gallery: [
         vid("advanced-shaders", "magic", "Magical materials: crystal, obsidian and arcane metal with curl-noise energy", { aspect: "16/9", caption: "Magic materials" }),
         vid("advanced-shaders", "clouds", "Ray-marched volumetric cumulus clouds", { aspect: "16/9", caption: "Volumetric clouds" }),
@@ -245,10 +256,22 @@ export const projects: Project[] = [
       cover: img("procedural-animations", "cover.webp", "Thousands of GPU-simulated fish schooling over a seabed", { aspect: "16/9" }),
       hoverVideo: vid("procedural-animations", "hexapod", "A six-legged spider walking with raycast footholds", { aspect: "16/9" }),
       hero: vid("procedural-animations", "hexapod", "A six-legged spider climbing with raycast footholds", { aspect: "16/9" }),
+      reel: [
+        vid("procedural-animations", "boids", "Sixteen thousand GPU fish schooling over the seabed", { caption: "11 · GPU crowds" }),
+        vid("procedural-animations", "hexapod", "A hexapod weaving between crates and climbing a wall", { caption: "05 · Procedural hexapod" }),
+        vid("procedural-animations", "quadruped", "A dog cycling through its gaits", { caption: "06 · Quadruped gaits" }),
+        vid("procedural-animations", "footik", "A mocap walk adapted onto stairs and slopes", { caption: "08 · Foot IK over mocap" }),
+        vid("procedural-animations", "xpbd", "A walker trailing an XPBD cloth cape", { caption: "04 · XPBD cape" }),
+        vid("procedural-animations", "ik", "CCD, FABRIK and Jacobian tentacles chasing their targets", { caption: "03 · Iterative IK" }),
+        vid("procedural-animations", "creatures", "An evolved block creature crawling", { caption: "12 · Evolved creatures" }),
+      ],
       gallery: [
         vid("procedural-animations", "quadruped", "A quadruped blending walk, trot, canter and gallop", { aspect: "16/9", caption: "Quadruped gaits" }),
         vid("procedural-animations", "boids", "Thousands of GPU fish boids swimming", { aspect: "16/9", caption: "GPU crowds" }),
         vid("procedural-animations", "creatures", "Evolved virtual creatures learning to move", { aspect: "16/9", caption: "Evolved creatures" }),
+        vid("procedural-animations", "footik", "A mocap walk adapted onto stairs and slopes", { aspect: "16/9", caption: "Foot IK over mocap" }),
+        vid("procedural-animations", "xpbd", "A walker trailing an XPBD cloth cape", { aspect: "16/9", caption: "XPBD cape" }),
+        vid("procedural-animations", "ik", "CCD, FABRIK and Jacobian tentacles side by side", { aspect: "16/9", caption: "Iterative IK lab" }),
         img("procedural-animations", "study-01.webp", "Study 01: Second-Order Dynamics", { caption: "01 · Second-Order Dynamics", aspect: "16/9" }),
         img("procedural-animations", "study-02.webp", "Study 02: Analytic IK: Two-Bone & Look-At", { caption: "02 · Analytic IK: Two-Bone & Look-At", aspect: "16/9" }),
         img("procedural-animations", "study-03.webp", "Study 03: Iterative IK Lab", { caption: "03 · Iterative IK Lab", aspect: "16/9" }),
@@ -303,6 +326,12 @@ export const projects: Project[] = [
       cover: img("enchanted-graphics-engine", "cover.webp", "A PBR demo scene lit by the Enchanted engine", { aspect: "4/3" }),
       hoverVideo: vid("enchanted-graphics-engine", "demo-tour-loop", "A camera tour through the PBR demo scene", { aspect: "4/3" }),
       hero: vid("enchanted-graphics-engine", "engine-demo-loop", "The engine's editor around a PBR scene", { aspect: "16/10" }),
+      reel: [
+        vid("enchanted-graphics-engine", "engine-demo-loop", "The ImGui editor around a PBR scene", { caption: "The editor" }),
+        vid("enchanted-graphics-engine", "demo-tour-loop", "A camera tour of the PBR demo scene", { caption: "PBR & IBL" }),
+        vid("enchanted-graphics-engine", "character-loop", "A GPU-skinned mannequin walking over terrain", { caption: "GPU skinning" }),
+        vid("enchanted-graphics-engine", "level-loop", "Moving through the playable level", { caption: "The level" }),
+      ],
       gallery: [
         vid("enchanted-graphics-engine", "demo-tour-loop", "A camera tour through the PBR demo scene", { aspect: "4/3", caption: "PBR demo tour" }),
         vid("enchanted-graphics-engine", "level-loop", "Moving through the level built with the engine", { aspect: "16/10", caption: "The level" }),

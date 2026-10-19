@@ -9,9 +9,12 @@
     linear-gradient(180deg, var(--sky-1) 0%, var(--sky-2) 55%, var(--parch) 100%);
 }
 .wd-hero__grid { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: clamp(28px, 5vw, 70px); align-items: center; }
+.wd-hero__text { container-type: inline-size; min-width: 0; }
+/* sized to its column: the longest word (--len characters) always fits */
 .wd-title {
   display: block; font-family: var(--display); font-weight: 900;
-  font-size: clamp(40px, 6vw, 92px); line-height: 1; margin: 18px 0 18px; color: var(--ink);
+  font-size: clamp(30px, calc(100cqi / (var(--len, 10) * 0.8)), 88px);
+  line-height: 1; margin: 18px 0 18px; color: var(--ink);
 }
 .wd-tagline { font-style: italic; font-size: clamp(19px, 1.8vw, 25px); color: var(--ink-2); line-height: 1.5; margin: 0; max-width: 34ch; }
 .wd-hero__unfurl { position: relative; }
@@ -120,3 +123,15 @@
 .wd-pager__title { font-family: var(--display); font-weight: 800; font-size: clamp(19px, 2vw, 26px); color: var(--ink); }
 .wd-pager__craft { font-style: italic; color: var(--crimson); font-size: 15px; }
 @media (max-width: 600px) { .wd-pager { grid-template-columns: 1fr; } .wd-pager__link--next { text-align: left; align-items: flex-start; } }
+
+@media (max-width: 640px) {
+  /* two columns keep tall phone screenshots from filling the whole screen */
+  .wd-gallery__grid { columns: 2; column-gap: 10px; }
+  .wd-gallery__item { margin-bottom: 10px; }
+  .wd-gallery__cap { font-size: 9.5px; letter-spacing: .12em; padding: 18px 8px 7px; }
+  .wd-gallery__play { width: 28px; height: 28px; top: 6px; right: 6px; }
+  .wd-post { grid-template-columns: 1fr 18px; gap: 4px 12px; }
+  .wd-post__when { grid-column: 1; }
+  .wd-post__title { grid-column: 1; }
+  .wd-post svg { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+}

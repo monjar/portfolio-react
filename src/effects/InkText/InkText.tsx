@@ -1,6 +1,6 @@
 /* InkText: letters bleed onto the page one by one, each landing with a gilded
    flare, as if inked by a quill. Screen readers get the plain string. */
-import { ElementType, useRef } from "react";
+import { CSSProperties, ElementType, useRef } from "react";
 import { useInView } from "../../lib/useInView";
 import "./InkText.css";
 
@@ -19,9 +19,10 @@ interface Props {
   delay?: number;
   /** ms between letters */
   stagger?: number;
+  style?: CSSProperties;
 }
 
-export default function InkText({ as: Tag = "span", parts, className = "", immediate = false, delay = 0, stagger = 38 }: Props) {
+export default function InkText({ as: Tag = "span", parts, className = "", immediate = false, delay = 0, stagger = 38, style }: Props) {
   const ref = useRef<HTMLElement>(null);
   const seen = useInView(ref);
   const on = immediate || seen;
@@ -30,7 +31,7 @@ export default function InkText({ as: Tag = "span", parts, className = "", immed
   let i = 0;
 
   return (
-    <Tag ref={ref} className={`ink-text ${on ? "inked" : ""} ${className}`} aria-label={label}>
+    <Tag ref={ref} className={`ink-text ${on ? "inked" : ""} ${className}`} aria-label={label} style={style}>
       {norm.map((part, pi) => (
         <span key={pi} className={part.className} aria-hidden="true">
           {part.text.split(/(\s+)/).map((word, wi) =>

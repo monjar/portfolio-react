@@ -10,6 +10,8 @@ import { inline } from "../lib/inline";
 import InkText from "../effects/InkText/InkText";
 import GildedFrame from "../effects/GildedFrame/GildedFrame";
 import Media from "../components/Media/Media";
+import Reel from "../components/Reel/Reel";
+import { longestWord } from "../lib/text";
 import MochiroDevice from "../components/MochiroDevice/MochiroDevice";
 import SigilCover from "../components/SigilCover/SigilCover";
 import StackChips from "../components/StackChips/StackChips";
@@ -25,6 +27,13 @@ function Hero({ p }: { p: Project }) {
     return (
       <div className="wd-hero__media wd-hero__media--device">
         <MochiroDevice />
+      </div>
+    );
+  }
+  if (p.media.reel?.length) {
+    return (
+      <div className="wd-hero__media">
+        <Reel items={p.media.reel} />
       </div>
     );
   }
@@ -83,7 +92,15 @@ function Detail({ p }: { p: Project }) {
             <div className="eyebrow sole hl d1">
               {roman(idx + 1)} · {p.craft}
             </div>
-            <InkText as="h1" className="wd-title" parts={[p.title]} immediate delay={200} stagger={45} />
+            <InkText
+              as="h1"
+              className="wd-title"
+              parts={[p.title]}
+              immediate
+              delay={200}
+              stagger={45}
+              style={{ ["--len" as string]: longestWord(p.title) }}
+            />
             <p className="wd-tagline hl d3">{p.tagline}</p>
           </div>
           <div className="wd-hero__unfurl hl d2">
