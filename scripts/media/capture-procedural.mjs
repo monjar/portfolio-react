@@ -5,7 +5,7 @@
 // Usage:
 //   PLAYWRIGHT_DIR=/path/with/node_modules/playwright \
 //   node scripts/media/capture-procedural.mjs --raw <scratch dir> --media <public/media/procedural-animations>
-//     [--skip-shots] [--skip-videos] [--force]
+//     [--skip-shots] [--skip-videos] [--force] [--only name,name]
 //
 // Writes:
 //   <raw>/study-NN.png            1600x900 screenshots (write-up panel hidden)
@@ -31,8 +31,18 @@ const MEDIA = arg('--media', path.join(HOME, 'Developer/portfolio-react/public/m
 const FORCE = flag('--force');
 const INDEX = 'https://monjar.dev/Advanced-Procedural-Animations-Study/';
 
-// Studies to record: output name -> study number
-const VIDEOS = { hexapod: 5, quadruped: 6, boids: 11, creatures: 12 };
+// Studies to record: output name -> study number. Subjects that sit small in
+// frame are cropped tighter in procedural.sh rather than zoomed here.
+const VIDEOS = {
+  hexapod: { n: 5 },
+  quadruped: { n: 6 },
+  boids: { n: 11 },
+  creatures: { n: 12 },
+  ik: { n: 3 },
+  xpbd: { n: 4 },
+  footik: { n: 8 },
+};
+const ONLY = arg('--only', '').split(',').filter(Boolean);
 
 async function loadPlaywright() {
   try { return await import('playwright'); } catch {}
@@ -111,7 +121,9 @@ if (!flag('--skip-shots')) {
 if (!flag('--skip-videos')) {
   const manifestPath = path.join(RAW, 'videos', 'manifest.json');
   const manifest = fs.existsSync(manifestPath) ? JSON.parse(fs.readFileSync(manifestPath, 'utf8')) : {};
-  for (const [name, n] of Object.entries(VIDEOS)) {
+  for (const [name, cfg] of Object.entries(VIDEOS)) {
+    if (ONLY.length && !ONLY.includes(name)) continue;
+    const n = cfg.n;
     const s = studies.find((x) => x.n === n);
     if (!s) { console.warn(`no study ${n} for ${name}`); continue; }
     if (!FORCE && manifest[name] && fs.existsSync(manifest[name].file)) { console.log(`skip video ${name}`); continue; }
