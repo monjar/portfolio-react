@@ -39,8 +39,8 @@
 .toggle:hover { background: color-mix(in oklab, var(--gold) 18%, transparent); transform: rotate(40deg); }
 .toggle svg, .nav-menu svg { width:17px; height:17px; }
 .nav-menu { display: none; }
-@media (max-width: 1020px) { .nav-links { gap: 16px; } .nav-links .navlink { letter-spacing: .14em; } }
-@media (max-width: 900px) {
+@media (max-width: 1240px) { .nav-links { gap: 16px; } .nav-links .navlink { letter-spacing: .14em; font-size: 12px; } }
+@media (max-width: 1100px) {
   .nav-links .navlink, .nav-div { display:none; }
   .nav-menu { display: grid; }
 }
