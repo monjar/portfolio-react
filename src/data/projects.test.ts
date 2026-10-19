@@ -1,7 +1,7 @@
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { archive, detailable, MediaItem, projects } from "./projects";
+import { archive, detailable, MediaItem, projects, slugAliases } from "./projects";
 import { STACK } from "./stack";
 
 const PUBLIC = join(__dirname, "../../public");
@@ -21,8 +21,8 @@ describe("projects", () => {
   it("points every media item at a file that exists", () => {
     const missing: string[] = [];
     for (const p of projects) {
-      const { cover, hoverVideo, hero, gallery = [] } = p.media;
-      const items = [cover, hoverVideo, typeof hero === "object" ? hero : undefined, ...gallery, ...(p.sections ?? []).map((s) => s.media)];
+      const { cover, hoverVideo, hero, gallery = [], reel = [], screens = [] } = p.media;
+      const items = [cover, hoverVideo, typeof hero === "object" ? hero : undefined, ...gallery, ...reel, ...screens, ...(p.sections ?? []).map((s) => s.media)];
       for (const m of items) if (m) for (const f of files(m)) if (!existsSync(join(PUBLIC, f))) missing.push(`${p.slug}: ${f}`);
     }
     expect(missing).toEqual([]);
@@ -38,6 +38,13 @@ describe("projects", () => {
 
   it("links every archive entry to its repo", () => {
     for (const p of archive) expect(p.links.repo, p.slug).toMatch(/^https:\/\/github\.com\//);
+  });
+
+  it("points every alias at a real work", () => {
+    for (const [from, to] of Object.entries(slugAliases)) {
+      expect(projects.some((p) => p.slug === from), from).toBe(false);
+      expect(projects.some((p) => p.slug === to), to).toBe(true);
+    }
   });
 
   it("only uses known stack ids", () => {

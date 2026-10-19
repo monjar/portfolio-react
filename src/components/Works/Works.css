@@ -6,7 +6,8 @@
 .works-group__title span { color: var(--crimson); font-weight: 700; }
 .works-group__title::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--gold), transparent); }
 .works { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 3vw, 32px); perspective: 1400px; }
-.works--elder { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.works--elder, .works--three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .works--elder .pcard p { font-size: 16.5px; }
 @media (max-width: 1020px) { .works--elder { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 900px) { .works--three { grid-template-columns: 1fr; } }
 @media (max-width: 720px) { .works, .works--elder { grid-template-columns: 1fr; } }
