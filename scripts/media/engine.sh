@@ -3,9 +3,9 @@
 source "$(dirname "$0")/lib.sh"
 
 SRC="$DEV/Enchanted-Graphics-Engine/docs/images"
-OUT="$MEDIA/enchanted-graphics-engine"
+OUT="$MEDIA/enchanted-game-engine"
 mkdir -p "$OUT"
-echo "== enchanted-graphics-engine"
+echo "== enchanted-game-engine"
 
 for n in demo-scene editor level character; do
   to_webp "$SRC/$n.png" "$OUT/$n.webp" 1600 "$IMAGE_MAX"
