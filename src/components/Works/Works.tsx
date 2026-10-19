@@ -15,7 +15,7 @@ const Works = () => {
         <h3 className="works-group__title reveal">
           <span>New Works</span> · MMXXVI
         </h3>
-        <div className="works">
+        <div className={`works ${newWorks.length % 3 === 0 ? "works--three" : ""}`}>
           {newWorks.map((p) => (
             <ProjectCard key={p.slug} p={p} num={roman(++n)} />
           ))}

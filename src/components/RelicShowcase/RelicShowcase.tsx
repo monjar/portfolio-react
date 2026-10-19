@@ -18,6 +18,7 @@ import SectionHead from "../SectionHead/SectionHead";
 import StackChips from "../StackChips/StackChips";
 import Media from "../Media/Media";
 import Reel from "../Reel/Reel";
+import PhoneFan from "../PhoneFan/PhoneFan";
 import MochiroDevice from "../MochiroDevice/MochiroDevice";
 import SigilCover from "../SigilCover/SigilCover";
 import { ArrowGlyph } from "../icons";
@@ -32,6 +33,13 @@ function RelicMedia({ p, active = true }: { p: Project; active?: boolean }) {
     return (
       <div className="relic-media relic-media--device">
         <MochiroDevice />
+      </div>
+    );
+  }
+  if (p.media.screens?.length) {
+    return (
+      <div className="relic-media relic-media--fan">
+        <PhoneFan items={p.media.screens} active={active} />
       </div>
     );
   }

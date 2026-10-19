@@ -60,6 +60,8 @@ export interface Project {
     hero?: MediaItem | "mochiro-face";
     /** highlight clips played in turn on the relic stage and detail hero */
     reel?: MediaItem[];
+    /** portrait app screens, shown as a fan of phones */
+    screens?: MediaItem[];
     gallery?: MediaItem[];
   };
   sections?: Section[];
@@ -160,6 +162,81 @@ export const projects: Project[] = [
       },
     ],
     posts: ["lightweight_cpp_display"],
+  },
+  {
+    slug: "roads-and-runes",
+    tier: "relic",
+    title: "Roads & Runes",
+    craft: "Order of the Wayfarer",
+    tagline: "A real-world RPG with fog over your own streets. Ride, run or walk to read the old roads and lift it.",
+    summary:
+      "An exploration RPG for iPhone and Apple Watch where the map is the real world. Every road was written once, by people who cut a rune where two ways met; nobody reads them any more, and that is the fog. New ground lifts it, quests send you somewhere you've never been, creatures settle where nobody is paying attention, and every journey ends in a reckoning of what it earned.",
+    year: "MMXXVI",
+    role: "Solo · iPhone, Watch & backend",
+    status: "TestFlight · v0.9.2",
+    accent: "#c0623a",
+    stack: ["swift", "python", "fastapi", "postgres", "redis", "claude", "strava", "flyio"],
+    stats: [
+      { label: "Version", value: "0.9.2" },
+      { label: "Platforms", value: "iPhone · Watch" },
+      { label: "Commits", value: "190+" },
+    ],
+    links: { repo: GH + "Roads-Runes" },
+    media: {
+      cover: img("roads-and-runes", "cover.webp", "Three Roads & Runes screens: the world map, a quest and journey's end", { aspect: "16/9" }),
+      screens: [
+        img("roads-and-runes", "app-02-world.webp", "The world: your own streets, fog and markers", { caption: "The world" }),
+        img("roads-and-runes", "app-04-quest-detail.webp", "A quest: ride 3.5 km of roads you have never travelled", { caption: "New ground" }),
+        img("roads-and-runes", "app-05-quest-route.webp", "The quest route, with distance, time and climbing", { caption: "Your quest route" }),
+        img("roads-and-runes", "app-06-navigation.webp", "Turn-by-turn on the ride", { caption: "On the ride" }),
+        img("roads-and-runes", "app-07-journeys-end.webp", "Journey's end: new tiles, a creature defeated, the journal entry", { caption: "Journey's end" }),
+        img("roads-and-runes", "app-03-quests.webp", "The quest board: your own journey, sealed quests, the bounty", { caption: "The quest board" }),
+        img("roads-and-runes", "app-01-choose-class.webp", "Choosing a class: Explorer, Wizard, Warrior or Scribe", { caption: "Choose your class" }),
+        img("roads-and-runes", "app-09-character.webp", "The character sheet and skills", { caption: "Character" }),
+        img("roads-and-runes", "app-08-journal.webp", "The journal of journeys", { caption: "Journal" }),
+        img("roads-and-runes", "app-10-ride-anywhere.webp", "Ride anywhere: no route, every find still counts", { caption: "Ride anywhere" }),
+      ],
+      gallery: [
+        img("roads-and-runes", "app-01-choose-class.webp", "Choosing a class: Explorer, Wizard, Warrior or Scribe", { caption: "Choose your class" }),
+        img("roads-and-runes", "app-02-world.webp", "The world map over real streets", { caption: "The world" }),
+        img("roads-and-runes", "app-03-quests.webp", "The quest board", { caption: "Quests" }),
+        img("roads-and-runes", "app-04-quest-detail.webp", "A quest's detail", { caption: "Quest detail" }),
+        img("roads-and-runes", "app-05-quest-route.webp", "The planned quest route", { caption: "Quest route" }),
+        img("roads-and-runes", "app-06-navigation.webp", "Turn-by-turn navigation", { caption: "On the ride" }),
+        img("roads-and-runes", "app-07-journeys-end.webp", "Journey's end", { caption: "Journey's end" }),
+        img("roads-and-runes", "app-08-journal.webp", "The journal", { caption: "Journal" }),
+        img("roads-and-runes", "app-09-character.webp", "The character sheet", { caption: "Character" }),
+        img("roads-and-runes", "app-10-ride-anywhere.webp", "Ride anywhere", { caption: "Ride anywhere" }),
+        img("roads-and-runes", "app-11-qa-tab.webp", "The Snitch tab on the edge of a test build", { caption: "Snitch, in a test build" }),
+        img("roads-and-runes", "app-12-qa-report.webp", "Filing a bug report with Snitch", { caption: "Filing a report" }),
+        img("roads-and-runes", "w1-watch-navigation.webp", "Apple Watch turn-by-turn (design render)", { caption: "Watch · navigation (render)" }),
+        img("roads-and-runes", "w2-watch-quest.webp", "A quest on Apple Watch (design render)", { caption: "Watch · quest (render)" }),
+        img("roads-and-runes", "w3-watch-stats.webp", "Ride stats on Apple Watch (design render)", { caption: "Watch · stats (render)" }),
+      ],
+    },
+    sections: [
+      {
+        heading: "The Old Roads",
+        body: [
+          "Pick a trade (Explorer, Wizard, Warrior or Scribe) and go out. New ground lifts the fog cell by cell, over H3 tiles that only count where there's a road or a path. The quest board offers your own journey, sealed quests that reveal their goal halfway, a weekly notice and a daily bounty. Creatures settle where nobody has been paying attention, and your effort near them sees them off; five legends sleep in lairs and break one phase a day.",
+          "Districts come from OpenStreetMap with honest explored percentages, and runes are found, ranked, inscribed and woken. Rides, runs and walks all count. Every journey ends with a reckoning of what it earned and a line in the journal.",
+        ],
+      },
+      {
+        heading: "The Road Beneath",
+        body: [
+          "**On the phone and wrist:** SwiftUI on iPhone and Apple Watch, with home and lock-screen widgets, a Live Activity, Siri and Action Button quick starts, and a pure-Swift core package shared between them.",
+          "**Behind it:** a FastAPI modular monolith on PostgreSQL/PostGIS with Redis, hosted on Fly.io. Routing runs through GraphHopper with custom bike models and through Valhalla, so round trips come home as real loops. Type one sentence (\"a quiet 20 km loop past the river\") and **Claude** reads it into preferences, places and stops. Journeys go out to Garmin and Strava.",
+          "Test builds carry [Snitch](/works/snitch), my own bug reporter: a tab on the screen edge files a report with the last 30 seconds of video.",
+        ],
+      },
+      {
+        heading: "Ridden, not just built",
+        body: [
+          "Every release is checked against field-test protocols, one ride per question: sound in a pocket, a shape on real streets, battery over a long day, somewhere new. The screens here are version 0.9.2 on the iPhone 17 Pro simulator, played by a new Explorer in Rotherhithe; the Watch screens are still design renders.",
+        ],
+      },
+    ],
   },
   {
     slug: "advanced-shaders",
@@ -304,9 +381,9 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "enchanted-graphics-engine",
+    slug: "enchanted-game-engine",
     tier: "relic",
-    title: "Enchanted Graphics Engine",
+    title: "Enchanted Game Engine",
     craft: "Order of the Forge",
     tagline: "A Vulkan engine forged from bare metal: frame graph, PBR, GPU culling, and a level to play.",
     summary:
@@ -323,23 +400,23 @@ export const projects: Project[] = [
     ],
     links: { repo: GH + "Enchanted-Graphics-Engine" },
     media: {
-      cover: img("enchanted-graphics-engine", "cover.webp", "A PBR demo scene lit by the Enchanted engine", { aspect: "4/3" }),
-      hoverVideo: vid("enchanted-graphics-engine", "demo-tour-loop", "A camera tour through the PBR demo scene", { aspect: "4/3" }),
-      hero: vid("enchanted-graphics-engine", "engine-demo-loop", "The engine's editor around a PBR scene", { aspect: "16/10" }),
+      cover: img("enchanted-game-engine", "cover.webp", "A PBR demo scene lit by the Enchanted engine", { aspect: "4/3" }),
+      hoverVideo: vid("enchanted-game-engine", "demo-tour-loop", "A camera tour through the PBR demo scene", { aspect: "4/3" }),
+      hero: vid("enchanted-game-engine", "engine-demo-loop", "The engine's editor around a PBR scene", { aspect: "16/10" }),
       reel: [
-        vid("enchanted-graphics-engine", "engine-demo-loop", "The ImGui editor around a PBR scene", { caption: "The editor" }),
-        vid("enchanted-graphics-engine", "demo-tour-loop", "A camera tour of the PBR demo scene", { caption: "PBR & IBL" }),
-        vid("enchanted-graphics-engine", "character-loop", "A GPU-skinned mannequin walking over terrain", { caption: "GPU skinning" }),
-        vid("enchanted-graphics-engine", "level-loop", "Moving through the playable level", { caption: "The level" }),
+        vid("enchanted-game-engine", "engine-demo-loop", "The ImGui editor around a PBR scene", { caption: "The editor" }),
+        vid("enchanted-game-engine", "demo-tour-loop", "A camera tour of the PBR demo scene", { caption: "PBR & IBL" }),
+        vid("enchanted-game-engine", "character-loop", "A GPU-skinned mannequin walking over terrain", { caption: "GPU skinning" }),
+        vid("enchanted-game-engine", "level-loop", "Moving through the playable level", { caption: "The level" }),
       ],
       gallery: [
-        vid("enchanted-graphics-engine", "demo-tour-loop", "A camera tour through the PBR demo scene", { aspect: "4/3", caption: "PBR demo tour" }),
-        vid("enchanted-graphics-engine", "level-loop", "Moving through the level built with the engine", { aspect: "16/10", caption: "The level" }),
-        vid("enchanted-graphics-engine", "character-loop", "A GPU-skinned mannequin walking over terrain", { aspect: "16/10", caption: "GPU skinning" }),
-        img("enchanted-graphics-engine", "editor.webp", "The ImGui editor with scene hierarchy and inspector", { caption: "The editor" }),
-        img("enchanted-graphics-engine", "level.webp", "The playable level", { caption: "Level" }),
-        img("enchanted-graphics-engine", "character.webp", "A skinned character model", { caption: "Character" }),
-        img("enchanted-graphics-engine", "demo-scene.webp", "The PBR demo scene", { caption: "Demo scene" }),
+        vid("enchanted-game-engine", "demo-tour-loop", "A camera tour through the PBR demo scene", { aspect: "4/3", caption: "PBR demo tour" }),
+        vid("enchanted-game-engine", "level-loop", "Moving through the level built with the engine", { aspect: "16/10", caption: "The level" }),
+        vid("enchanted-game-engine", "character-loop", "A GPU-skinned mannequin walking over terrain", { aspect: "16/10", caption: "GPU skinning" }),
+        img("enchanted-game-engine", "editor.webp", "The ImGui editor with scene hierarchy and inspector", { caption: "The editor" }),
+        img("enchanted-game-engine", "level.webp", "The playable level", { caption: "Level" }),
+        img("enchanted-game-engine", "character.webp", "A skinned character model", { caption: "Character" }),
+        img("enchanted-game-engine", "demo-scene.webp", "The PBR demo scene", { caption: "Demo scene" }),
       ],
     },
     sections: [
@@ -349,52 +426,12 @@ export const projects: Project[] = [
           "**Rendering:** a forward renderer driven by a frame graph, with PBR and image-based lighting, clustered lighting, cascaded, cube and spot shadows, SSAO, bloom with ACES tonemapping and 4× MSAA. **Two-phase GPU occlusion culling** against a hierarchical-Z buffer keeps the draw count honest.",
           "**Everything around it:** an ECS with reflection, a job system, rigid-body physics, glTF import, GPU skinning, audio and a Dear ImGui editor. Then the real test: making a game with it.",
         ],
-        media: img("enchanted-graphics-engine", "editor.webp", "The engine's ImGui editor"),
+        media: img("enchanted-game-engine", "editor.webp", "The engine's ImGui editor"),
       },
     ],
   },
 
   /* ═════ NEW WORKS ═════ */
-  {
-    slug: "roads-and-runes",
-    tier: "work",
-    era: "new",
-    title: "Roads & Runes",
-    craft: "Order of the Wayfarer",
-    tagline: "Your bike rides become quests. Ride to lift the fog of war.",
-    summary:
-      "A real-world cycling RPG. The map is the real world and your bicycle is how you explore it: clear fog over H3 cells, take quests, pick a class, open chests, and follow turn-by-turn routes on your wrist. Strava sync is built in, and Claude reads routes you ask for in plain language.",
-    year: "MMXXVI",
-    role: "Solo",
-    status: "TestFlight",
-    accent: "#c0623a",
-    stack: ["swift", "python", "fastapi", "postgres", "redis", "strava", "claude", "flyio"],
-    links: { repo: GH + "Roads-Runes" },
-    media: {
-      cover: img("roads-and-runes", "cover.webp", "Roads & Runes: a fantasy map overlaid on real streets", { aspect: "519/310" }),
-      gallery: [
-        img("roads-and-runes", "02-world.webp", "The world map with fog of war over real streets", { caption: "The world" }),
-        img("roads-and-runes", "03-quests.webp", "The quest log", { caption: "Quests" }),
-        img("roads-and-runes", "01-onboarding-class.webp", "Choosing a class: Explorer, Wizard, Warrior or Scribe", { caption: "Pick a class" }),
-        img("roads-and-runes", "06-navigation.webp", "Turn-by-turn navigation", { caption: "Navigation" }),
-        img("roads-and-runes", "09-character.webp", "The character sheet", { caption: "Character" }),
-        img("roads-and-runes", "07-adventure-complete.webp", "An adventure completed", { caption: "Victory" }),
-        img("roads-and-runes", "08-journal.webp", "The adventurer's journal", { caption: "Journal" }),
-        img("roads-and-runes", "w1-watch-navigation.webp", "Apple Watch turn-by-turn navigation", { caption: "On the wrist" }),
-        img("roads-and-runes", "w2-watch-quest.webp", "A quest on Apple Watch", { caption: "Watch quest" }),
-        img("roads-and-runes", "w3-watch-stats.webp", "Ride stats on Apple Watch", { caption: "Watch stats" }),
-      ],
-    },
-    sections: [
-      {
-        heading: "The Road",
-        body: [
-          "SwiftUI on iPhone and Apple Watch, with widgets and a pure-Swift core package. Behind it sits FastAPI on PostgreSQL/PostGIS with Redis, routing through GraphHopper (custom bike models) and Valhalla, and OSM imports for the world. HealthKit and Strava OAuth bring your rides in.",
-          "Field-tested the only honest way: by riding it.",
-        ],
-      },
-    ],
-  },
   {
     slug: "snitch",
     tier: "work",
@@ -757,3 +794,8 @@ export const elderWorks = projects.filter((p) => p.tier === "work" && p.era === 
 export const archive = ofTier("archive");
 /* projects with their own /works/:slug page, in reading order */
 export const detailable = [...relics, ...newWorks, ...elderWorks];
+
+/* old slugs that should still land on the right page */
+export const slugAliases: Record<string, string> = {
+  "enchanted-graphics-engine": "enchanted-game-engine",
+};

@@ -5,7 +5,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 import type { Plugin } from "vite";
-import { detailable } from "../src/data/projects.ts";
+import { detailable, slugAliases } from "../src/data/projects.ts";
 
 const SITE = "https://monjar.dev";
 const NAME = "The Codex of Monjar";
@@ -73,7 +73,17 @@ export default function routeShells(): Plugin {
         mkdirSync(dir, { recursive: true });
         writeFileSync(join(dir, "index.html"), shell(html, r));
       }
-      this.info?.(`wrote ${routes.length} route shells`);
+      // renamed works: a tiny page that forwards to the new address
+      for (const [from, to] of Object.entries(slugAliases)) {
+        const dir = join(outDir, `works/${from}`);
+        mkdirSync(dir, { recursive: true });
+        const url = `${SITE}/works/${to}/`;
+        writeFileSync(
+          join(dir, "index.html"),
+          `<!doctype html><meta charset="utf-8"><title>Moved</title><link rel="canonical" href="${url}"><meta http-equiv="refresh" content="0; url=/works/${to}/"><script>location.replace("/works/${to}/" + location.search + location.hash)</script><a href="/works/${to}/">This work has moved.</a>\n`
+        );
+      }
+      this.info?.(`wrote ${routes.length} route shells, ${Object.keys(slugAliases).length} redirect(s)`);
     },
   };
 }

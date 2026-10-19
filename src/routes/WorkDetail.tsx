@@ -1,7 +1,7 @@
 /* /works/:slug: a project unrolled into its own scroll. */
 import { useState } from "react";
-import { Link, useParams } from "react-router";
-import { bySlug, detailable, MediaItem, Project } from "../data/projects";
+import { Link, Navigate, useParams } from "react-router";
+import { bySlug, detailable, MediaItem, Project, slugAliases } from "../data/projects";
 import { usePosts } from "../lib/usePosts";
 import { useReveal } from "../lib/useReveal";
 import { useDocumentMeta } from "../lib/useDocumentMeta";
@@ -11,6 +11,7 @@ import InkText from "../effects/InkText/InkText";
 import GildedFrame from "../effects/GildedFrame/GildedFrame";
 import Media from "../components/Media/Media";
 import Reel from "../components/Reel/Reel";
+import PhoneFan from "../components/PhoneFan/PhoneFan";
 import { longestWord } from "../lib/text";
 import MochiroDevice from "../components/MochiroDevice/MochiroDevice";
 import SigilCover from "../components/SigilCover/SigilCover";
@@ -27,6 +28,13 @@ function Hero({ p }: { p: Project }) {
     return (
       <div className="wd-hero__media wd-hero__media--device">
         <MochiroDevice />
+      </div>
+    );
+  }
+  if (p.media.screens?.length) {
+    return (
+      <div className="wd-hero__media wd-hero__media--fan">
+        <PhoneFan items={p.media.screens} />
       </div>
     );
   }
@@ -219,6 +227,7 @@ function Detail({ p }: { p: Project }) {
 
 export default function WorkDetail() {
   const { slug } = useParams<{ slug: string }>();
+  if (slug && slugAliases[slug]) return <Navigate to={`/works/${slugAliases[slug]}`} replace />;
   const p = bySlug(slug);
   if (!p || p.tier === "archive") return <NotFound />;
   return <Detail key={p.slug} p={p} />;
